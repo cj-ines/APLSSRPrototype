@@ -8,10 +8,13 @@ return array(
     'router' => array(
         'routes' => array(
             'web-survey' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/survey',
+                    'route'    => '/survey[/:action]',
+                	'constraints' => array(
+                		'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                	),
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found

@@ -42,4 +42,8 @@ class SurveyController extends AbstractActionController
         // are working when you browse to /survey/survey/foo
         return array();
     }
+    
+    public function thankyouAction() {
+    	return new ViewModel();
+    }
 }

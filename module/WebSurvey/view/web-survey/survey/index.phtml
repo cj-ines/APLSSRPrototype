@@ -16,7 +16,7 @@
     <?php echo $this->answers;?>
 </div>
 
-<button class="btn btn-primary btn-lg">Submit Answers</button>
+<a class="btn btn-primary btn-lg" href="<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>">Submit Answers</a>
 
 <script type="text/javascript">
     $(window).load(function(){
