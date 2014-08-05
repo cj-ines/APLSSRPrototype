@@ -17,12 +17,16 @@ class DashboardController extends AbstractActionController
     public function indexAction()
     {
         $scorings = array (
-        	'Lead Generation',
-            'Agreement Negiotiation',
-            'Post-close',
-            'Account Admin',
-            'Internal Admin',
-            'Sales Planning'
+        	'Lead Generation' => array(
+        		'Q1' => 'SSR provides high quality market intelligence',
+        		'Q2' => 'SSR is effective at handling & channeling incoming leads',
+        		'Q3' => 'SSR is effective at making cold calls to generate leads',
+        	),
+            'Agreement Negiotiation' => array('Q4' => '','Q5' => '','Q6' => '','Q7' => '','Q8' => ''),
+            'Post-close' => array('Q9' => ''),
+            'Account Admin' => array('Q10' => '','Q11' => '','Q12' => ''),
+            'Internal Admin' => array('Q13' => '','Q14' => '','Q15' => ''),
+            'Exception' => array('Q16' => ''),
         );
         $filters_view = new ViewModel();
         $filters_view->setTemplate('reporting/dashboard/parts/filters');
@@ -30,9 +34,10 @@ class DashboardController extends AbstractActionController
         $view = new ViewModel(array(
         	'scoring' => $scorings,
         ));
-        foreach ($scorings as $scoring ) {
+        foreach ($scorings as $scoring => $questions ) {
             $score_view = new ViewModel(array(
             	'title' => $scoring,
+            	'questions' => $questions,
             ));
             $score_view->setTemplate('reporting/dashboard/parts/scores');
             $view->addChild($score_view,$scoring);

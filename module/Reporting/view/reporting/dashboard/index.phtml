@@ -9,7 +9,7 @@
         <strong>*</strong> Be consious in sharing results that the sampling is sufficiently low to easily identify individual respondent's answers
     </div>
     <?php 
-    foreach ($this->scoring as $score){
+    foreach ($this->scoring as $score => $q){
         echo $this->$score;
     }
     ?>
