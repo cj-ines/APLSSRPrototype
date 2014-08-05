@@ -26,3 +26,11 @@
 .c-score-info-sm {
 	font-size: 9pt;
 }
+
+.c-score-info-md {
+	font-size: 13pt;
+}
+
+.c-score-cards {
+	min-height: 250px;
+}
