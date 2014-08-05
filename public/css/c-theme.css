@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+.c-filter-panel {
+	max-height: 150px;
+	overflow-y:scroll;
+	min-height: 150px;
+	font-size: 10pt;
+}
+
+.c-filter-toggle {
+	font-weight: bold;
+	font-size: 12pt;
+	color: black;
+}
+.c-question {
+	font-size: 14pt;
+}
+
+.c-answers {
+	margin: 20px;
+	font-size: 11pt;
+}
+
+.c-score  {
+	font-size: 18pt;
+}
+.c-score-info-sm {
+	font-size: 9pt;
+}

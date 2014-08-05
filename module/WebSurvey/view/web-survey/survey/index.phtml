@@ -1,0 +1,43 @@
+<div class="page-title"><h3>Online Survey</h3></div>
+
+<div class="well c-question">
+    <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
+    SSR provides high quality market intelligence 
+    <?php echo $this->answers;?>
+</div>
+<div class="well c-question">
+    <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
+    SSR is effective at handling &amp; channeling incoming leads 
+    <?php echo $this->answers;?>
+</div>
+<div class="well c-question">
+    <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
+    SSR is effective at making cold calls to generate leads
+    <?php echo $this->answers;?>
+</div>
+
+<button class="btn btn-primary btn-lg">Submit Answers</button>
+
+<script type="text/javascript">
+    $(window).load(function(){
+        $('.confirm-identity').modal('show');
+    });
+</script>
+<div class="modal fade confirm-identity" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Agreement
+            </div>
+            <div class="modal-body">
+                <b>Thank you for your interest of participating the survey!</b>
+                <br><br>
+                Before you can continue with the survey please confirm that you are <b>John Doe</b> of <b>XXXX</b>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">I confirm</button>
+                <a href="<?php echo $this->url('home'); ?>" class="btn btn-default">I'm not him</a>
+            </div>
+        </div>
+    </div>
+</div>
