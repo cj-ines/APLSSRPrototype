@@ -1,20 +1,22 @@
 <div class="page-title"><h3>Online Survey</h3></div>
 
+<?php 
+foreach ($this->questions as $k => $q ) {
+?>
 <div class="well c-question">
     <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
-    SSR provides high quality market intelligence 
-    <?php echo $this->answers;?>
+    <strong><?php echo $k ?></strong>
+    <?php echo $q ?>
+    <div class="c-answers">
+	    <input type="radio" name="<?php echo $k ?>"> 5. Strongly Agree <br>
+	    <input type="radio" name="<?php echo $k ?>"> 4. Agree <br>
+	    <input type="radio" name="<?php echo $k ?>"> 3. Neutral <br>
+	    <input type="radio" name="<?php echo $k ?>"> 2. Disagree <br>
+	    <input type="radio" name="<?php echo $k ?>"> 1. Strongly Dissagree <br>
+	    <input type="radio" name="<?php echo $k ?>"> NA. Not Applicable <br>
+	</div>
 </div>
-<div class="well c-question">
-    <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
-    SSR is effective at handling &amp; channeling incoming leads 
-    <?php echo $this->answers;?>
-</div>
-<div class="well c-question">
-    <button class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Explain</button>
-    SSR is effective at making cold calls to generate leads
-    <?php echo $this->answers;?>
-</div>
+<?php } ?>
 
 <a class="btn btn-primary btn-lg" href="<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>">Submit Answers</a>
 
