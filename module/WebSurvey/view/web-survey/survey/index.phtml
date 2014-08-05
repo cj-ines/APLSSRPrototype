@@ -37,12 +37,10 @@
                     <li> I'm <b>John Doe</b> of <b>XXXX</b></li>
                     <li> My answer will reflect the truth as much as possible.</li>
                 </ul>
-               
-                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">I confirm</button>
-                <a href="<?php echo $this->url('home'); ?>" class="btn btn-default">I Refuse</a>
+                <a href="<?php echo $this->url('web-survey', array('action' => 'refuse')); ?>" class="btn btn-default">I Refuse</a>
             </div>
         </div>
     </div>
