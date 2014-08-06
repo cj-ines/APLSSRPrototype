@@ -50,4 +50,8 @@ class SurveyController extends AbstractActionController
     public function refuseAction() {
     	return new ViewModel();
     }
+    
+    public function practiceAction() {
+    	return new ViewModel();
+    }
 }
