@@ -32,5 +32,7 @@
 }
 
 .c-score-cards {
-	min-height: 250px;
+	max-height: 240px;
+	overflow-y:scroll;
+	min-height: 240px;
 }

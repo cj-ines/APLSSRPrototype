@@ -2,10 +2,11 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-7">
 				<h5><span class="panel-title"><?php echo $this->title; ?></span></h5>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-5">
+				<span class="c-score badge"><?php echo $s = number_format(rand(3.9,5.0),1)?></span>
 				<span class="c-score badge"><?php echo $s = number_format(rand(3.9,5.0),1)?></span>
 			</div>
 		</div>
@@ -14,12 +15,14 @@
 	<table class="table " >
 		<tr>
 		  <th>Question</th>
-		  <th>Score *</th>
-		  <th>Response Rate</th>
+		  <th>Score A</th>
+		  <th>Score B</th>
+		  <!-- <th>Response Rate</th>  -->
 		</tr>
 		<?php 
 		foreach ($this->questions as $code => $question) {
 			$n = rand(1,5);
+			$m = rand(1,5);
 		?>
 		<tr>
 			<td class="c-score-info-md"><?php echo $code ?></td>
@@ -28,7 +31,12 @@
 				<span class="label label-warning score-warning" data-toggle="tooltip" data-placement="top" title="Too few respondents. Be wary when making decision using this data.">!</span>
 				<?php } ?>
 			</th>
-			<td class="c-score-info-sm">(<?php echo $n ;?> out of 5)</td>
+			<th><?php echo $s ?>
+				<?php if ($m<=2) {?>
+				<span class="label label-warning score-warning" data-toggle="tooltip" data-placement="top" title="Too few respondents. Be wary when making decision using this data.">!</span>
+				<?php } ?>
+			</th>
+			<!--  <td class="c-score-info-sm">(<?php echo $n ;?> out of 5)</td>  -->
 		</tr>
 		<?php } ?>
 		<!--  <tr>

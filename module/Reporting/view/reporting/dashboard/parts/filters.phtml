@@ -7,8 +7,11 @@
 			</div>
 			<div class="col-md-4">
 				<div class="btn-group">
-					<button class="btn btn-primary apply-selection" data-toggle="tooltip" title="">Apply Selection</button>
-					<button class="btn btn-primary compare-selection" data-toggle="tooltip" title="Compare your current selection to previous selection.">Compare Selection</button>
+					<a class="btn btn-primary apply-selection" data-toggle="tooltip" title=""
+					href="<?php echo $this->url('reporting') ?>">Apply Selection</a>
+					<a class="btn btn-primary compare-selection" data-toggle="tooltip" title="Compare your current selection to previous selection."
+					href="<?php echo $this->url('reporting').'?compare=true'?>"
+					>Compare Selection</a>
 					<button class="btn btn-primary">?</button>
 				</div>
 			</div>

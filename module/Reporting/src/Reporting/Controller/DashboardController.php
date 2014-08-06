@@ -16,7 +16,8 @@ class DashboardController extends AbstractActionController
 {
     public function indexAction()
     {
-        $scorings = array (
+    	$compare = $this->params()->fromQuery('compare');
+    	$scorings = array (
         	'Lead Generation' => array(
         		'Q1' => 'SSR provides high quality market intelligence',
         		'Q2' => 'SSR is effective at handling & channeling incoming leads',
@@ -30,20 +31,27 @@ class DashboardController extends AbstractActionController
         );
         $filters_view = new ViewModel();
         $filters_view->setTemplate('reporting/dashboard/parts/filters');
-        $scorecards = array();
-        $view = new ViewModel(array(
+        $dashbord_view = new ViewModel(array(
         	'scoring' => $scorings,
         ));
+        $dashbord_view->setTemplate('reporting/dashboard/parts/dashboard');
+        $scorecards = array();
+        $view = new ViewModel();
         foreach ($scorings as $scoring => $questions ) {
             $score_view = new ViewModel(array(
             	'title' => $scoring,
             	'questions' => $questions,
             ));
-            $score_view->setTemplate('reporting/dashboard/parts/scores');
-            $view->addChild($score_view,$scoring);
+            if ($compare=='') {
+            	$score_view->setTemplate('reporting/dashboard/parts/scores');
+            } else {
+            	$score_view->setTemplate('reporting/dashboard/parts/scores-compare');
+            }
+            $dashbord_view->addChild($score_view,$scoring);
         }
         
         $view->addChild($filters_view,'filters');
+        $view->addChild($dashbord_view,'dashboard');
         return $view;
     }
 
