@@ -25,7 +25,7 @@
 			<td class="c-score-info-md"><?php echo $code ?></td>
 			<th><?php echo $s ?>
 				<?php if ($n<=2) {?>
-				<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="Too few respondents. Be wary when making decision using this data.">!</span>
+				<span class="label label-warning score-warning" data-toggle="tooltip" data-placement="top" title="Too few respondents. Be wary when making decision using this data.">!</span>
 				<?php } ?>
 			</th>
 			<td class="c-score-info-sm">(<?php echo $n ;?> out of 5)</td>
@@ -45,3 +45,6 @@
 	</div>
 </div>
 </div>
+<script>
+	$('.score-warning').tooltip();
+</script>
