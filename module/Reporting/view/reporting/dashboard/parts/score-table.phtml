@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span class="panel-title">Survey Results</span>
+	</div>
+	<table class="table table-bordered">
+		<tr class="score-table-header">
+			<th>Key Task</th>
+			<th>Questions questions</th>
+			<th>Rater 1</th>
+			<th>Rater 2</th>
+			<th>Av Score</th>
+		</tr>
+		<?php foreach ($this->scorings as $key => $questions) {
+			$first = true; ?>
+			<tr>
+			<?php if ($first) { $first = false;?>
+			
+			<th rowspan=<?php echo count($questions) ?>><span class="key-task"><?php echo $key; ?></span></th>
+			<?php } else { ?>
+			</tr><tr>
+			<?php } ?>
+			<?php foreach ($questions as $code =>  $question) {?>
+			<td><span class="question-text"><?php echo $code.' - '.$question; ?></span></td>
+			<td>3</td>
+			<td>3</td>
+			<td>3</td>
+			</tr>
+			<?php } ?>
+		<?php } ?>
+	</table>
+	<div class="panel-footer">
+		<button class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</button>
+	</div>
+</div>

@@ -11,7 +11,7 @@ return array(
                 'type'    => 'Segment',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/[dashboard/:mode[/:action]]',
+                    'route'    => '/[dashboard/:action[/:mode]]',
                 	'constraints' => array(
                 		'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                 		'mode' => '[a-zA-Z][a-zA-Z0-9_-]*',
