@@ -12,10 +12,10 @@ return array(
                 'type'    => 'Segment',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/[dashboard/:action[/:mode]]',
+                    'route'    => '/[dashboard/:action]',
                 	'constraints' => array(
                 		'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                		'mode' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                		//'mode' => '[a-zA-Z][a-zA-Z0-9_-]*',
                 	),
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
@@ -30,7 +30,7 @@ return array(
                     'admin-interface' => array(
                        'type' => 'Segment',
                        'options' => array(
-                           'route' => 'admin[/:action]',
+                           'route' => '/admin[/:action]',
                            'constraints' => array(
                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                            ),
