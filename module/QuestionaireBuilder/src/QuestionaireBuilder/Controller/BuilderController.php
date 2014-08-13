@@ -14,6 +14,8 @@ use Zend\View\Model\ViewModel;
 
 class BuilderController extends AbstractActionController
 {
+    public $questions;
+
     public function indexAction()
     {
         return array();
@@ -21,10 +23,21 @@ class BuilderController extends AbstractActionController
     
     public function buildAction()
     {
-        return new ViewModel();
+        $questions = $this->getQuestions();
+        $view =  new ViewModel(array(
+            'questions' => $questions,
+        ));
+        return $view;
     }
 
     public function doneAction() {
         return new ViewModel();
+    }
+
+    public function getQuestions() {
+        if (!isset($this->questions)) {
+            $this->questions = $this->getServiceLocator()->get('QuestionRepository');
+        }
+        return $this->questions;
     }
 }

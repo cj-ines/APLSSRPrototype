@@ -1,4 +1,4 @@
-<div class="page-header"><h2>Questionaire Builder</h2></div>
+<div class="page-header"><h2>Questionnaire Builder</h2></div>
 <div class="row">
     <div class="col-md-4 ">
         <h3>Step 1</h3>
@@ -27,17 +27,14 @@
     <h3>Step 2</h3>
         <div class="col-md-3">
             <div class="btn-group-vertical">
-                <button class="btn btn-default">Lead Generation</button>
-                <button class="btn btn-default">Negotiation Agreement</button>
-                <button class="btn btn-default">Post Closet</button>
-                <button class="btn btn-default">Account Admin</button>
-                <button class="btn btn-primary">Internal Admin</button>
-                <button class="btn btn-default">Sales Planning</button>
-                <button class="btn btn-default">Exception Handling</button>
+                <button class="btn btn-default">Default Questionnaire</button>
+                <?php foreach ($this->questions as $type => $question_item) { ?>
+                <button class="btn btn-default"><?php echo $type ?></button>
+                <?php } ?>
             </div>
         </div>
         <div class="col-md-9 well">
-        <h4>This questions will be asked:</h4>
+        <h4>These questions will be asked:</h4>
             <ul class="list-group">
                 <li class="list-group-item"><b>Q13</b> SSR updates data in CRM on behalf of reps quickly and accurately</li>
                 <li class="list-group-item"><b>Q14</b> SSR provides timely forecasts to CCAM</li>

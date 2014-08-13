@@ -14,15 +14,17 @@ use Zend\View\Model\ViewModel;
 
 class SurveyController extends AbstractActionController
 {
+    public $questions;
+
     public function indexAction()
     {
         
-        $questions = array (
-            'Q1' => 'SSR provides high quality market intelligence',
-            'Q2' => 'SSR is effective at handling & channeling incoming leads',
-            'Q3' => 'SSR is effective at making cold calls to generate leads',
-        );
-        $view = new ViewModel(array('questions'=>$questions));
+        $questions = $this->getQuestions();
+        $mode = urldecode($this->params()->fromRoute('mode'));
+        $view = new ViewModel(array(
+            'questions'=> $questions[$mode],
+            'mode' => $mode,
+        ));
         
         $answers_view = new ViewModel(array('question' => $questions));
         $answers_view->setTemplate('web-survey/survey/parts/answers');
@@ -53,5 +55,12 @@ class SurveyController extends AbstractActionController
     
     public function practiceAction() {
     	return new ViewModel();
+    }
+
+    public function getQuestions() {
+        if (!isset($this->questions)) {
+            $this->questions = $this->getServiceLocator()->get('QuestionRepository');
+        }
+        return $this->questions;
     }
 }
