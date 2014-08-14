@@ -41,7 +41,8 @@ foreach ($this->questions as $k => $q ) {
                 </ul>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">I confirm</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Continue to Survey</button>
+                <a href="<?php echo $this->url('web-survey', array('action' => 'postpone')) ?>" class="btn btn-default">Remind me Later</a>
                 <a href="<?php echo $this->url('web-survey', array('action' => 'refuse')); ?>" class="btn btn-default">I Refuse</a>
             </div>
         </div>

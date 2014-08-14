@@ -45,19 +45,28 @@ class SurveyController extends AbstractActionController
         return array();
     }
     
-    public function thankyouAction() {
+    public function thankyouAction() 
+    {
     	return new ViewModel();
     }
     
-    public function refuseAction() {
+    public function refuseAction()
+    {
     	return new ViewModel();
     }
     
-    public function practiceAction() {
+    public function practiceAction() 
+    {
     	return new ViewModel();
     }
 
-    public function getQuestions() {
+    public function postponeAction() 
+    {
+        return new ViewModel();
+    }
+
+    public function getQuestions() 
+    {
         if (!isset($this->questions)) {
             $this->questions = $this->getServiceLocator()->get('QuestionRepository');
         }

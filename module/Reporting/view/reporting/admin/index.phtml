@@ -1,25 +1,16 @@
 <div class="page-title"><h2>Administration</h2></div>
 
 <div class="row">
-	<div class="col-md-3">
-
-				<div class="btn-group btn-group-vertical">
-					<button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user"></span> User editor</button>
-					<a href="<?php echo $this->url('reporting/admin-interface',array('action' => 'assignment')) ?>"
-					class="btn btn-default btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Assigment editor</a>
-				</div>
-				
-
-	</div>
-	<div class="col-md-9">
-		<?php echo $this->userTable; ?>
+	<div class="col-md-12">
+	<?php echo $this->tabsMenu ?>
 	</div>
 </div>
+<br>
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				
+				<?php echo $this->userTable; ?>
 			</div>
 		</div>
 	</div>
