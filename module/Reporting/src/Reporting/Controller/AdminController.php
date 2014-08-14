@@ -14,4 +14,10 @@ class AdminController extends AbstractActionController
 		$view->addChild($user_table_view,'userTable');
 		return $view;
 	}
+
+	public function assignmentAction() 
+	{
+		$view = new ViewModel();
+		return $view;
+	}
 }

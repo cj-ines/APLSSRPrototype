@@ -4,19 +4,16 @@ return array(
         'invokables' => array(
             'Reporting\Controller\Dashboard' => 'Reporting\Controller\DashboardController',
             'Reporting\Controller\Admin' => 'Reporting\Controller\AdminController',
+            'Reporting\Controller\Manager' => 'Reporting\Controller\ManagerController',
         ),
     ),
     'router' => array(
         'routes' => array(
             'reporting' => array(
-                'type'    => 'Segment',
+                'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/[dashboard/:action]',
-                	'constraints' => array(
-                		'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                		//'mode' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                	),
+                    'route'    => '/',
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found
@@ -30,12 +27,23 @@ return array(
                     'admin-interface' => array(
                        'type' => 'Segment',
                        'options' => array(
-                           'route' => '/admin[/:action]',
+                           'route' => 'admin[/:action]',
                            'constraints' => array(
                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                            ),
                            'defaults' => array(
                                'controller' => 'admin',
+                               'action' => 'index',
+                           ), ), ),
+                     'manager-interface' => array(
+                       'type' => 'Segment',
+                       'options' => array(
+                           'route' => 'manager[/:action]',
+                           'constraints' => array(
+                               'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                           ),
+                           'defaults' => array(
+                               'controller' => 'manager',
                                'action' => 'index',
                            ), ), ),
                     // This route is a sane default when developing a module;

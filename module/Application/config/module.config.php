@@ -35,7 +35,7 @@ return array(
                     ),
                 ),
                 'may_terminate' => true,
-                'child_routes' => array(
+                /* 'child_routes' => array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
@@ -48,7 +48,7 @@ return array(
                             ),
                         ),
                     ),
-                ),
+                ), */
             ),
         ),
     ),
