@@ -20,14 +20,20 @@ class SurveyController extends AbstractActionController
     {
         
         $questions = $this->getQuestions();
-        $mode = urldecode($this->params()->fromRoute('mode'));
+        $modes = $this->addIndexQuestions($questions);
+        $mode = $modes[$this->params()->fromRoute('mode')];
+       
         $view = new ViewModel(array(
             'questions'=> $questions[$mode],
             'mode' => $mode,
+            'questionnaire' => $modes,
         ));
         
         $answers_view = new ViewModel(array('question' => $questions));
         $answers_view->setTemplate('web-survey/survey/parts/answers');
+        $confirm_identity_view = new ViewModel();
+        $confirm_identity_view->setTemplate('web-survey/survey/parts/confirm-identity');
+
         foreach ($questions as $key => $q) {
             $question_view = new ViewModel(array('question' => $q));
             $question_view->setTemplate('web-survey/survey/parts/answers');
@@ -35,6 +41,7 @@ class SurveyController extends AbstractActionController
         }
         
         $view->addChild($answers_view,'answers');
+        $view->addChild($confirm_identity_view,'confirmIdentity');
         return $view;
     }
 
@@ -71,5 +78,13 @@ class SurveyController extends AbstractActionController
             $this->questions = $this->getServiceLocator()->get('QuestionRepository');
         }
         return $this->questions;
+    }
+    public function addIndexQuestions($questions)
+    {
+        $arr = array();
+        foreach ($questions as $key =>$question) {
+            $arr[] = $key;
+        }
+        return $arr;
     }
 }

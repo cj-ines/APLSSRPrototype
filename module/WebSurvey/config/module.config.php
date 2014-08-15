@@ -14,7 +14,7 @@ return array(
                     'route'    => '/survey[/:action[/:mode]]',
                 	'constraints' => array(
                 		'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'mode' => '[a-zA-Z][a-zA-Z0-9_-][ ]*',
+                        'mode' => '[0-9]*',
                 	),
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
@@ -22,7 +22,7 @@ return array(
                         '__NAMESPACE__' => 'WebSurvey\Controller',
                         'controller'    => 'Survey',
                         'action'        => 'index',
-                        'mode'          => 'General'
+                        'mode'          => '0'
                     ),
                 ),
                 'may_terminate' => true,

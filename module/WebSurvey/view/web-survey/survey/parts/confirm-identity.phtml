@@ -1,0 +1,24 @@
+<div class="modal fade confirm-identity" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Agreement
+            </div>
+            <div class="modal-body">
+                <h4>Thank you for your interest in participating the survey!</h4>
+                <br><br>
+                Before you can continue with the survey please confirm:
+                <ul>
+                    <li> I'm <b>John Doe</b> of <b>XXXX</b></li>
+                    <li> My answer will reflect the truth as much as possible.</li>
+                    <li> More. [TBD]</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Continue to Survey</button>
+                <a href="<?php echo $this->url('web-survey', array('action' => 'postpone')) ?>" class="btn btn-default">Remind me Later</a>
+                <a href="<?php echo $this->url('web-survey', array('action' => 'refuse')); ?>" class="btn btn-default">I Refuse</a>
+            </div>
+        </div>
+    </div>
+</div>
