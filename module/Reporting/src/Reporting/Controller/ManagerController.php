@@ -17,4 +17,10 @@ class ManagerController extends AbstractActionController
 		$view = new ViewModel();
 		return $view;
 	}
+	
+	public function approveAction()
+	{
+		$view = new ViewModel();
+		return $view;
+	}
 }

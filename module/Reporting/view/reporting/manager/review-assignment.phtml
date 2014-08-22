@@ -1,17 +1,21 @@
 <div class="page-title"><h2>Review Assigment</h2></div>
+<div class="alert alert-info">
+	Hello. {{PLACEHOLDER}} explaining thepage
+</div>
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading"><span class="panel-title">Your reviewers</span></div>
 			<table class="table">
-				<tr><th>Reviewer</th><th>Name</th><th>Email</th><th>More Info (TBD)</th></tr>
-				<tr><td>1</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td></tr>
-				<tr><td>2</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td></tr>
-				<tr><td>3</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td></tr>
+				<tr><th>Reviewer</th><th>Name</th><th>Email</th><th>More Info (TBD)</th><th>Actions</th></tr>
+				<tr><td>1</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td><td><button class="btn btn-default btn-xs">Change</button></td></tr>
+				<tr><td>2</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td><td><button class="btn btn-default btn-xs">Change</button></td></tr>
+				<tr><td>3</td><td>Raphael Young</td><td>raphael.young@host.com</td><td>-</td><td><button class="btn btn-default btn-xs">Change</button></td></tr>
+				
 			</table>
 			<div class="panel-footer">
-				<a class="btn btn-success ">Approve Reviewers</a>
-				<a class="btn btn-default">Reject Reviewers</a>
+				<a class="btn btn-success" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
+				<!--<a class="btn btn-default">Reject Reviewers</a> -->
 			</div>
 		</div>
 	</div>

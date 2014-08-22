@@ -30,8 +30,15 @@ class BuilderController extends AbstractActionController
         return $view;
     }
 
-    public function doneAction() {
+    public function doneAction() 
+    {
         return new ViewModel();
+    }
+
+    public function moreInfoAction() 
+    {
+        $view = new ViewModel();
+        return $view;
     }
 
     public function getQuestions() {
