@@ -12,12 +12,12 @@ foreach ($this->questions as $k => $q ) {
     <strong><?php echo $k ?></strong>
     <?php echo $q ?>
     <div class="c-answers">
-	    <input type="radio" name="<?php echo $k ?>"> 5. Strongly Agree <br>
-	    <input type="radio" name="<?php echo $k ?>"> 4. Agree <br>
-	    <input type="radio" name="<?php echo $k ?>"> 3. Neutral <br>
-	    <input type="radio" name="<?php echo $k ?>"> 2. Disagree <br>
-	    <input type="radio" name="<?php echo $k ?>"> 1. Strongly Dissagree <br>
-	    <input type="radio" name="<?php echo $k ?>"> Not Applicable <br>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 5 </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 4 </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 3 </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 2 </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 1 </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> N </label>
 	</div>
 </div>
 <?php } ?>
