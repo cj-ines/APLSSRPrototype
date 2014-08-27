@@ -5,6 +5,7 @@ return array(
             'Reporting\Controller\Dashboard' => 'Reporting\Controller\DashboardController',
             'Reporting\Controller\Admin' => 'Reporting\Controller\AdminController',
             'Reporting\Controller\Manager' => 'Reporting\Controller\ManagerController',
+            'Reporting\Controller\Loader' => 'Reporting\Controller\LoaderController',
         ),
     ),
     'router' => array(
@@ -44,6 +45,17 @@ return array(
                            ),
                            'defaults' => array(
                                'controller' => 'manager',
+                               'action' => 'index',
+                           ), ), ),
+                     'loader-interface' => array(
+                       'type' => 'Segment',
+                       'options' => array(
+                           'route' => 'loader[/:action]',
+                           'constraints' => array(
+                               'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                           ),
+                           'defaults' => array(
+                               'controller' => 'loader',
                                'action' => 'index',
                            ), ), ),
                     // This route is a sane default when developing a module;

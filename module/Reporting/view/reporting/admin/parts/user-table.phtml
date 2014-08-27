@@ -1,15 +1,33 @@
+<?php
+			/* $userLoaderForm = $this->userLoaderForm;
+			$userLoaderForm->prepare();
+			//$userLoaderForm->setAttribute('action' , 'cj');
+			$userLoaderForm->setAttribute('method', 'POST');
+			echo $this->form()->openTag($userLoaderForm);
+			$element = $userLoaderForm->get('fileUpload');
+			echo $this->formLabel($element);
+			echo $this->formElement($element);
+			echo $this->formElementErrors($element);
+
+			$element = $userLoaderForm->get('fileSubmit')->setAttribute('class','btn btn-default');;
+			echo $this->formElement($element);
+			echo $this->form()->closeTag();
+			*/
+		?>
 <div class="panel panel-default">
 	<div class="panel-heading">List of Users</div>
 	<div class="panel-body">
 		<button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New User</button>
-		<button class="btn btn-default">Import List</button>
+		<a href="<?php echo $this->url('reporting/loader-interface', array('action' => 'load-user-list')); ?>"
+		class="btn btn-default"> Load user</a>
+		
 	</div>
 	<table class="table">
 		<tr>
 			<th>Username</th>
 			<th>Full Name</th>
 			<th>Email</th>
-			<th>Type</th>
+			<th>Role</th>
 			<th>Action</th>
 		</tr>
 		<tr>

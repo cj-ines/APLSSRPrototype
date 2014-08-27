@@ -30,6 +30,24 @@ class Module implements AutoloaderProviderInterface
         );
     }
 
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                //FORMS
+                'UserLoaderForm' => function ($sm) {
+                    $form = new \Reporting\Form\UserLoaderForm();
+                    $form->setInputFilter($sm->get('UserLoaderFilter'));
+                    return $form;
+                },
+                //INPUT FILTERS
+                'UserLoaderFilter' => function ($sm) {
+                    return new \Reporting\Form\UserLoaderFilter();
+                },
+            )
+        );
+    }
+
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';

@@ -8,6 +8,8 @@ class AdminController extends AbstractActionController
 {
 	public function indexAction() 
 	{
+
+		
 		$view = new ViewModel();
 		$pagination_search_view = new ViewModel();
 		$pagination_search_view->setTemplate('reporting/admin/parts/pagination-search');
@@ -24,6 +26,8 @@ class AdminController extends AbstractActionController
 
 	public function assignmentAction() 
 	{
+		
+		$upload_form = $this->getServiceLocator()->get('UserLoaderForm');
 		$view = new ViewModel();
 		$pagination_search_view = new ViewModel();
 		$pagination_search_view->setTemplate('reporting/admin/parts/pagination-search');
@@ -39,5 +43,10 @@ class AdminController extends AbstractActionController
 			->addChild($assignment_table_view,'assignmentTable')
 		;
 		return $view;
+	}
+
+	public function fileInvalidAction()
+	{
+		return new ViewModel();
 	}
 }
