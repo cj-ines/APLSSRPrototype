@@ -6,6 +6,7 @@ return array(
             'Reporting\Controller\Admin' => 'Reporting\Controller\AdminController',
             'Reporting\Controller\Manager' => 'Reporting\Controller\ManagerController',
             'Reporting\Controller\Loader' => 'Reporting\Controller\LoaderController',
+            'Reporting\Controller\Home'=> 'Reporting\Controller\HomeController'
         ),
     ),
     'router' => array(
@@ -19,12 +20,23 @@ return array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found
                         '__NAMESPACE__' => 'Reporting\Controller',
-                        'controller'    => 'Dashboard',
+                        'controller'    => 'Home',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    'dashboard-interface' => array(
+                       'type' => 'Segment',
+                       'options' => array(
+                           'route' => 'dashboard[/:action]',
+                           'constraints' => array(
+                               'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                           ),
+                           'defaults' => array(
+                               'controller' => 'dashboard',
+                               'action' => 'index',
+                           ), ), ),
                     'admin-interface' => array(
                        'type' => 'Segment',
                        'options' => array(
