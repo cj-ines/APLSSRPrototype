@@ -21,35 +21,49 @@ class LoaderController extends AbstractActionController
 				$error = $ext_valid->getMessages();
 			}
 			else {
-				$fields_required = array('User Number','First Name','Last Name','Email');
-				$success[] = "File OK";
+				$fields_required = array(
+					'User Number',
+					'First Name',
+					'Last Name',
+					'Email'
+				);
+				//$success[] = "File OK";
 				$csv = fopen($file['tmp_name'],'r');
 				$out = fgetcsv($csv);
-				$flag = false;
+				$flag = 0;
 				foreach ($out as  $field) {
 					if (in_array($field, $fields_required)) {
-						$flag = true;
+						$flag++;
 					}
 					else {
-						$missing[] = $field;
+						$unknown[] = $field;
 					}
 				}
 
-				if (!$flag) {
-					$list = implode(", ", $missing);
-					$success[] = 'There are fields that are missing';
+				if ($flag<count($fields_required)) {
+					$list = implode(", ", $unknown);
+					$error[] = 'Unregnized fields: ' .$list;
+					$error[] = 'There are fields that are missing';
 				}
 				else {
 					$success[] = 'List successfully inserted.';
 				}
 			}
 		}
-		$view = new ViewModel(array(
+		$upload_form_view = new ViewModel(array(
 			'userLoaderForm' => $user_loader_form,
 			'error' => $error,
 			'success' => $success,
 		));
+		$upload_form_view->setTemplate('reporting/loader/parts/upload-form');
+		$view = new ViewModel();
+		$view->addChild($upload_form_view,'uploadForm');
 		return $view;
+	}
+
+	public function processFile($file)
+	{
+
 	}
 		
 }

@@ -1,7 +1,11 @@
 <div class="page-title"><h3 id="questionnaire-title"><?php echo $this->mode; ?> - Online Survey</h3></div>
 <div class="well">
-	Hello <strong>John Doe</strong>. You are being surveyed about <strong>Mike Bob</strong>  of <?php echo $this->mode ?> team. 
+	Hello <strong>John Doe</strong>. You are being surveyed about SSR <strong>Mike Bob</strong>  of <?php echo $this->mode ?> team. 
 	<button class="btn btn-xs btn-default" data-target = '.report-problem' data-toggle="modal"><span class="glyphicon glyphicon-flag"></span> Report Error</button>
+    <br>
+    <div>
+        <!--5. Strongly Agree 4. Agree 3. Neutral 2. Disagree 1. Strongly Disagree  -->
+    </div>
 </div>
 
 <?php 
@@ -17,7 +21,7 @@ foreach ($this->questions as $k => $q ) {
 	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 3 </label>
 	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 2 </label>
 	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 1 </label>
-	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> N </label>
+	    <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> NA </label>
 	</div>
 </div>
 <?php } ?>

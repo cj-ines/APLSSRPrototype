@@ -21,7 +21,7 @@ class UserLoaderForm extends Form
 				'type' => 'file',
 			),
 			'options' => array (
-				'label' => 'File',
+				'label' => 'Userlist upload',
 			)
 		));
 		$this->add(array(

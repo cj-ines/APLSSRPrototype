@@ -44,6 +44,13 @@ class Module implements AutoloaderProviderInterface
                 'UserLoaderFilter' => function ($sm) {
                     return new \Reporting\Form\UserLoaderFilter();
                 },
+                // MORE
+                'UserLoaderFormFactory' => function ($sm) {
+                    $form = $sm->get('UserLoaderForm');
+                    $upload_form_view = new \Zend\View\Model\ViewModel(array('userLoaderForm' => $form));
+                    $upload_form_view->setTemplate('reporting/loader/parts/upload-form');
+                    return $upload_form_view;
+                }
             )
         );
     }
