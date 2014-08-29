@@ -30,23 +30,60 @@
 	<div class="col-md-12">
 		<?php if (isset($this->success)) 
 		{
-			echo '<div class="alert alert-info">';
+			echo $this->headScript()->appendFile($this->basePath() . '/js/reporting/loader/show_modal.js');
+			/* echo '<div class="alert alert-info">';
 			foreach ($this->success as $success) {
 				echo '<li>'.$success;
 				echo '<strong><a href="'.$this->url('reporting/admin-interface',array('action' => 'index')).'">Click</a></strong>';
 			}
-			echo '</div>';
+			echo '</div>'; */
 		}
 		?>
 
 			<?php if (isset($this->error)) 
 		{
-			echo '<div class="alert alert-danger">';
+			echo $this->headScript()->appendFile($this->basePath() . '/js/reporting/loader/show_modal.js');
+			/* echo '<div class="alert alert-danger">';
 			foreach ($this->error as $error) {
 				echo '<li>'.$error;
 			}
-			echo '</div>';
+			echo '</div>'; */
 		}
 		?>
 	</div>
+</div>
+
+<div class="modal fade upload-msg-log">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Upload Log
+            </div>
+            <div class="modal-body">
+            <?php if (isset($this->success)) { ?>
+            	<div class="alert alert-success">
+            	<?php   foreach ($this->success as $success) {
+               		echo '<li>'.$success; 
+                } ?>
+            	</div>
+            <?php } ?>
+
+            <?php if (isset($this->error)) { ?>
+            	<div class="alert alert-danger">
+            	<?php   foreach ($this->error as $error) {
+               		echo '<li>'.$error; 
+                } ?>
+            	</div>
+            <?php } ?>
+            </div>
+            <div class="modal-footer">
+            	
+            	<?php if (isset($this->success)) { ?>
+            	<a class="btn btn-success" href="<?php echo $this->url('reporting/admin-interface', array('action' => 'index')); ?>">Good
+            	</a>
+            	<?php } ?>
+            	<button class="btn btn-default" data-dismiss="modal">Try Again</button>
+            </div>
+        </div>
+    </div>
 </div>
