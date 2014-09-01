@@ -6,7 +6,9 @@
 			<h4>
 				Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.
 			</h4>
-			<a class="btn btn-default btn-lg">Explain More</a>
+			<a 
+			href="<?php echo $this->url('reporting/site-pages', array ('action' => 'view-workflow'))?>"
+			class="btn btn-default btn-lg">Workflow</a>
 			
 		</div>
 	</div>
@@ -54,7 +56,7 @@
 			</p>
 			<p>
 				<a class="btn btn-primary"
-				href="<?php ?>">Contact us</a>
+				href="<?php echo $this->url('reporting/site-pages', array('action' => 'contact-us')); ?>">Contact us</a>
 				<a class="btn btn-default">More info</a>
 			</p>
 		</div>

@@ -70,6 +70,17 @@ return array(
                                'controller' => 'loader',
                                'action' => 'index',
                            ), ), ),
+                     'site-pages' => array(
+                       'type' => 'Segment',
+                       'options' => array(
+                           'route' => 'site[/:action]',
+                           'constraints' => array(
+                               'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                           ),
+                           'defaults' => array(
+                               'controller' => 'home',
+                               'action' => 'index',
+                           ), ), ),
                     // This route is a sane default when developing a module;
                     // as you solidify the routes for your module, however,
                     // you may want to remove it and replace it with more

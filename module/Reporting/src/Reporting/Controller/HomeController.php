@@ -12,4 +12,16 @@ class HomeController extends AbstractActionController
 		$view = new ViewModel();
 		return $view;
 	}
+
+	public function viewWorkflowAction()
+	{
+		$view = new ViewModel();
+		return $view;
+	}
+
+	public function contactUsAction()
+	{
+		$view = new ViewModel();
+		return $view;
+	}
 }
