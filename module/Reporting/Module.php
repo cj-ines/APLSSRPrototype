@@ -40,6 +40,11 @@ class Module implements AutoloaderProviderInterface
                     $form->setInputFilter($sm->get('UserLoaderFilter'));
                     return $form;
                 },
+                'ContactUsForm' => function ($sm) {
+                    $form = new \Reporting\Form\ContactUsForm();
+                    //$form->setInputFilter($sm->get('UserLoaderFilter'));
+                    return $form;
+                },
                 //INPUT FILTERS
                 'UserLoaderFilter' => function ($sm) {
                     return new \Reporting\Form\UserLoaderFilter();

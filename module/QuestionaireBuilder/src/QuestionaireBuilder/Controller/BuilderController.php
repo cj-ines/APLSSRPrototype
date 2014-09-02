@@ -30,6 +30,15 @@ class BuilderController extends AbstractActionController
         return $view;
     }
 
+    public function newBuildAction()
+    {
+        $questions = $this->getQuestions();
+        $view =  new ViewModel(array(
+            'questions' => $questions,
+        ));
+        return $view;
+    }
+
     public function doneAction() 
     {
         return new ViewModel();

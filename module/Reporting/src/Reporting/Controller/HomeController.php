@@ -21,7 +21,8 @@ class HomeController extends AbstractActionController
 
 	public function contactUsAction()
 	{
-		$view = new ViewModel();
+		$form = $this->getServiceLocator()->get('ContactUsForm');
+		$view = new ViewModel(array('form' => $form));
 		return $view;
 	}
 }
