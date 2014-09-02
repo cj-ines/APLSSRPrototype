@@ -42,12 +42,15 @@ class Module implements AutoloaderProviderInterface
                 },
                 'ContactUsForm' => function ($sm) {
                     $form = new \Reporting\Form\ContactUsForm();
-                    //$form->setInputFilter($sm->get('UserLoaderFilter'));
+                    $form->setInputFilter($sm->get('ContactUsFilter'));
                     return $form;
                 },
                 //INPUT FILTERS
                 'UserLoaderFilter' => function ($sm) {
                     return new \Reporting\Form\UserLoaderFilter();
+                },
+                'ContactUsFilter' => function ($sm) {
+                    return new \Reporting\Form\ContactUsFilter();
                 },
                 // MORE
                 'UserLoaderFormFactory' => function ($sm) {

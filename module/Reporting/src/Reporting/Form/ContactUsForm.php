@@ -47,6 +47,20 @@ class ContactUsForm extends Form
 		));
 
 		$this->add(array(
+			'name' => 'emailAddress',
+			'type' => 'Text',
+			'options' => array(
+				'label' => 'Email Address ',
+				'required' => 'required',
+			),
+			'attributes' => array(
+				'placeholder' => 'Eneter your e-mail',
+				'id' => 'email',
+				'class' => 'form-control'
+			),
+		));
+
+		$this->add(array(
 			'name' => 'messageBody',
 			'type' => 'Zend\Form\Element\Textarea',
 			'options' => array(
@@ -56,7 +70,8 @@ class ContactUsForm extends Form
 			'attributes' => array(
 				'class' => 'form-control',
 				'placeholder' => 'Enter comments, problems, suggestions',
-				'id' => 'body'
+				'id' => 'body',
+				'rows' => '4',
 			)
 		));
 		
