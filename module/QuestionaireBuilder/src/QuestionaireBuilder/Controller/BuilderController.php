@@ -24,9 +24,12 @@ class BuilderController extends AbstractActionController
     public function buildAction()
     {
         $questions = $this->getQuestions();
+        $admin_tabs_view = new ViewModel();
+        $admin_tabs_view->setTemplate('reporting/admin/parts/tabs-menu');
         $view =  new ViewModel(array(
             'questions' => $questions,
         ));
+        $view->addChild($admin_tabs_view,'adminTabsView');
         return $view;
     }
 

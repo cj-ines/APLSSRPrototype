@@ -40,14 +40,14 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class=""><a href="<?php echo $this->url('reporting') ?>"><?php echo $this->translate('Reporting') ?></a></li>
-                        <li class=""><a href="<?php echo $this->url('questionaire-builder'); ?>"><?php echo $this->translate('Questionaire Builder'); ?></a></li>
+                        <!--<li class=""><a href="<?php echo $this->url('questionaire-builder'); ?>"><?php echo $this->translate('Questionaire Builder'); ?></a></li> -->
                         <li class=""><a href="<?php echo $this->url('web-survey') ?>"><?php echo $this->translate('Online Survey') ?></a></li>
                         <li class=""><a href="<?php echo $this->url('reporting/admin-interface') ?>"><?php echo $this->translate('Admin') ?></a></li>
                         <li class=""><a href="<?php echo $this->url('reporting/manager-interface', array('action' => 'review-assignment')) ?>"><?php echo $this->translate('Manager') ?></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
-        </nav>
+        </nav><div class="container"
         <div class="container">
             <?php echo $this->content; ?>
             <hr>

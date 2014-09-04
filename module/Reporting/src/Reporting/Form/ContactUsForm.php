@@ -12,7 +12,6 @@ class ContactUsForm extends Form
 
 		$this->setName('ContactUs');
 		$this->setAttribute('method','post');
-		$this->setAttribute('enctype','multipart/form-data');
 		$this->setAttributes(array(
 			'class' => 'form-horizontal',
 			'role' => 'form',
@@ -69,7 +68,7 @@ class ContactUsForm extends Form
 			),
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter comments, problems, suggestions',
+				'placeholder' => 'Enter comments, problems, suggestions. Max of 200 characters.',
 				'id' => 'body',
 				'rows' => '4',
 			)

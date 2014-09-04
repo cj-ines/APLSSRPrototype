@@ -4,6 +4,7 @@ namespace Reporting\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Mail;
 
 class LoaderController extends AbstractActionController
 {
@@ -47,6 +48,7 @@ class LoaderController extends AbstractActionController
 				}
 				else {
 					$success[] = 'List successfully inserted.';
+					$this->sendEmail();
 				}
 			}
 		}
@@ -63,6 +65,18 @@ class LoaderController extends AbstractActionController
 
 	public function processFile($file)
 	{
+
+	}
+
+	public function sendEmail()
+	{
+		$mailer = $this->getServiceLocator()->get('MailerService');
+		$mail = new Mail\Message();
+		$body = "Email invitation";
+		$mail->setBody($body);
+		$mail->setFrom('SSR.Survey@email.com');
+		$mail->setTo('cj.ines@zoop.net');
+		$mailer->send($mail);
 
 	}
 		

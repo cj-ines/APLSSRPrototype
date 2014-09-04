@@ -3,12 +3,17 @@
 <div class="row">
 <?php
 $form = $this->form;
-echo $this->form()->openTag($form);
+$action =  $this->url('reporting/site-pages',array('action' => 'send-message'));
+$form->setAttributes(array(
+	'action' => $action,
+	'method' => 'POST',
+));
+//echo $this->form()->openTag($form);
 ?>
-<div class="col-md-8">
+<div class="col-md-6">
 	<?php echo $this->form()->render($form); ?>
 </div>
 <?php 
-echo $this->form()->closeTag($form);
+//echo $this->form()->closeTag($form);
 ?>
 </div>
