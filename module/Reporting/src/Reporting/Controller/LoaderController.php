@@ -3,6 +3,7 @@
 namespace Reporting\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Mvc\Controller\Plugin\Url;
 use Zend\View\Model\ViewModel;
 use Zend\Mail;
 
@@ -72,10 +73,12 @@ class LoaderController extends AbstractActionController
 	{
 		$mailer = $this->getServiceLocator()->get('MailerService');
 		$mail = new Mail\Message();
-		$body = "Email invitation";
+		$link = 'http://'. $_SERVER['SERVER_NAME'].$this->url()->fromRoute('reporting/manager-interface');
+		var_dump($link);
+		$body = "Dear Manager, Please review you responents: " . $link ;
 		$mail->setBody($body);
 		$mail->setFrom('SSR.Survey@email.com');
-		$mail->setTo('cj.ines@zoop.net');
+		$mail->setTo('kaisercj@live.com');
 		$mailer->send($mail);
 
 	}
