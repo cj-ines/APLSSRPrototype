@@ -8,6 +8,8 @@ class ManagerController extends AbstractActionController
 {
 	public function indexAction() 
 	{
+		$mailer = $this->getServiceLocator()->get('MailService');
+		$mailer->sendReviewInvitation();
 		$view = new ViewModel();
 		return $view;
 	}

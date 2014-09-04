@@ -71,17 +71,9 @@ class LoaderController extends AbstractActionController
 
 	public function sendEmail()
 	{
-		$mailer = $this->getServiceLocator()->get('MailerService');
-		$mail = new Mail\Message();
-		$link = 'http://'. $_SERVER['SERVER_NAME'].$this->url()->fromRoute('reporting/manager-interface', array('action' => 'review-assignment'));
-		var_dump($link);
-		$body = "Dear Manager, Please review you responents: " . $link ;
-		$mail->setBody($body);
-		$mail->setSubject('SSR Invitation');
-		$mail->setFrom('SSR.Survey@email.com');
-		$mail->setTo('kaisercj@live.com');
-		$mailer->send($mail);
-
+		$mailer = $this->getServiceLocator()->get('MailService');
+		$mailer->sendReviewInvitation();
 	}
+
 		
 }

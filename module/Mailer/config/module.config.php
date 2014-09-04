@@ -44,7 +44,12 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'ZendSkeletonModule' => __DIR__ . '/../view',
+            'Mailer' => __DIR__ . '/../view',
+        ),
+    ),
+    'service_manager' => array(
+        'invokables' => array(
+            'MailService' => 'Mailer\Service\MailService',
         ),
     ),
 );

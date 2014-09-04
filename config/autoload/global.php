@@ -26,4 +26,7 @@ return array(
     		'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
     	),
     ),
+    'email_config' => array(
+        'email_address' => 'cj.ines@zoop.net'
+    ),
 );
