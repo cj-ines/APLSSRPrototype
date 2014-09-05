@@ -1,7 +1,9 @@
 <?php
 namespace QuestionaireBuilder\Model;
 
-class Questions {
+class Questions 
+{
+	
 	public function fetchByCategory() {
 		
 	}

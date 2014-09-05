@@ -10,6 +10,7 @@ class ManagerController extends AbstractActionController
 	{
 		$mailer = $this->getServiceLocator()->get('MailService');
 		$mailer->sendReviewInvitation();
+		$mailer->sendSurveyInvitation();
 		$view = new ViewModel();
 		return $view;
 	}
@@ -22,6 +23,8 @@ class ManagerController extends AbstractActionController
 	
 	public function approveAction()
 	{
+		$mailer =  $this->getServiceLocator()->get('MailService');
+		$mailer->sendSurveyInvitation();
 		$view = new ViewModel();
 		return $view;
 	}

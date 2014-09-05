@@ -52,4 +52,9 @@ return array(
             'MailService' => 'Mailer\Service\MailService',
         ),
     ),
+    'module_config' => array(
+        'review_respondent_link' => 'http://'. $_SERVER['SERVER_NAME'] . '/manager/review-assignment',
+        'sender' => 'cj.ines@zoop.net',
+        'survey_link' => 'http://'. $_SERVER['SERVER_NAME'] . '/survey',
+    ),
 );

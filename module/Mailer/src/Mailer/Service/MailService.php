@@ -16,7 +16,7 @@ class MailService implements ServiceLocatorAwareInterface
 			$this->mailer = $this->getServiceLocator()->get('MailerService');
 		}
 
-		return $mailer;
+		return $this->mailer;
 	}
 
 	public function getEmailCopy()
@@ -29,12 +29,25 @@ class MailService implements ServiceLocatorAwareInterface
 	{
 		$mailer = $this->getMailerService();
 		$mail = new Mail\Message();
-		$link = 'http://'. $_SERVER['SERVER_NAME'].$this->url()->fromRoute('reporting/manager-interface', array('action' => 'review-assignment'));
-		var_dump($link);
-		$body = "Dear Manager, Please review you responents: " . $link ;
+		$module_config = $this->getModuleConfig();
+		
+		$body = "Dear Manager, Please review you responents: " . $module_config['review_respondent_link'];
 		$mail->setBody($body);
 		$mail->setSubject('SSR Invitation');
-		$mail->setFrom('SSR.Survey@email.com');
+		$mail->setFrom($module_config['sender']);
+		$mail->setTo($this->getEmailCopy());
+		$mailer->send($mail);
+	}
+
+	public function sendSurveyInvitation()
+	{
+		$mailer = $this->getMailerService();
+		$module_config = $this->getModuleConfig();
+		$mail = new Mail\Message();
+		$body = "Dear Respondent, Please complete the survey: " . $module_config['survey_link'];
+		$mail->setSubject('Survey Invitation');
+		$mail->setBody($body);
+		$mail->setFrom($module_config['sender']);
 		$mail->setTo($this->getEmailCopy());
 		$mailer->send($mail);
 	}
@@ -47,5 +60,11 @@ class MailService implements ServiceLocatorAwareInterface
 	public function getServiceLocator()
 	{
 		return $this->sm;
+	}
+
+	public function getModuleConfig()
+	{
+		$config = $this->getServiceLocator()->get('config');
+		return $config['module_config'];
 	}
 }
