@@ -1,0 +1,59 @@
+<div class="page-title"><h2>Questionaire Builder</h2></div>
+<div class="row">
+    <div class="col-md-12">
+    <?php echo $this->adminTabsView ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 ">
+        <h3>Step 1</h3>
+        <ol>
+        <li>
+            What population do you want to track performance?
+            <select class="form-control c-input" multiple>
+                <option>SSR</option>
+                <option>Logistics Manager</option>
+                <option>Sales Manager</option>
+                <option>Accounting</option>
+            </select>
+        </li>
+        <li>
+            What country?
+            <select class="form-control c-input" multiple>
+                <option>Netherlands</option>
+                <option>Japan</option>
+                <option>US</option>
+                <option>China</option>
+            </select>
+        </li>
+        </ol>
+    </div>
+    <div class="col-md-8 ">
+    <h3>Step 2</h3>
+        <div class="col-md-3">
+            <div class="btn-group-vertical">
+                <button class="btn btn-default">Default Questionnaire</button>
+                <?php foreach ($this->questions as $type => $question_item) { ?>
+                <button class="btn btn-default"><?php echo $type ?></button>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="col-md-9 well">
+        <h4>These questions will be asked:</h4>
+            <ul class="list-group">
+                <?php foreach ($this->questions['General'] as $key => $question_question) { ?> 
+                    <li class="list-group-item"><?php echo '<b>'.$key.'</b> '.$question_question; ?></li>
+                <?php  } ?>
+            </ul>
+        </div>
+    </div>    
+</div>
+<div class="row">
+    <div class="col-md-12 ">
+        <h3>Step 3</h3>
+        Please confirm everything is correct and press the button below.<br>
+        <a class="btn btn-success btn-lg" href="<?php echo $this->url('questionaire-builder/build-interface',array('action' => 'done')) ?>">Done</a>
+    </div>  
+</div>
+
+

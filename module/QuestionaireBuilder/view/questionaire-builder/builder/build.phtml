@@ -1,59 +1,62 @@
-<div class="page-title"><h2>Questionaire Builder</h2></div>
+<?php $this->headScript()->prependFile($this->basePath().'/js/admin/builder/builder.js'); ?>
+<div class="page-title"><h2>Questionnaire Builder</h2></div>
+<div class="container">
 <div class="row">
     <div class="col-md-12">
-    <?php echo $this->adminTabsView ?>
+        <label for="population">What population do you want to track performance?</label><br>
+        <input  id="population" type="checkbox"> SSR
+        <hr>
+        <label for="country">What county?</label><br>
+        <input  id="country" type="checkbox"> USA
     </div>
 </div>
+    <br>
 <div class="row">
-    <div class="col-md-4 ">
-        <h3>Step 1</h3>
-        <ol>
-        <li>
-            What population do you want to track performance?
-            <select class="form-control c-input" multiple>
-                <option>SSR</option>
-                <option>Logistics Manager</option>
-                <option>Sales Manager</option>
-                <option>Accounting</option>
-            </select>
-        </li>
-        <li>
-            What country?
-            <select class="form-control c-input" multiple>
-                <option>Netherlands</option>
-                <option>Japan</option>
-                <option>US</option>
-                <option>China</option>
-            </select>
-        </li>
-        </ol>
-    </div>
-    <div class="col-md-8 ">
-    <h3>Step 2</h3>
-        <div class="col-md-3">
-            <div class="btn-group-vertical">
-                <button class="btn btn-default">Default Questionnaire</button>
-                <?php foreach ($this->questions as $type => $question_item) { ?>
-                <button class="btn btn-default"><?php echo $type ?></button>
-                <?php } ?>
+	
+    <div class="col-md-4 question-selectors">
+        <h3>List of Questions</h3>
+        <div class="panel-group" id="questions-panel">
+            <?php
+            $counter = 0;
+            foreach ($this->questions as $key => $question) { $counter++; ?>
+            <div class="panel panel-default">
+                <div class="panel-heading"><span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#questions-panel" href="#qc_<?php echo $counter ?>">
+                            <?php echo $key ?>
+                        </a>
+                    </span>
+                </div>
+                <div class="panel-collapse collapse out" id="qc_<?php echo $counter ?>">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                        <?php
+                        foreach ($question as $question_key => $question_text) { ?>
+                           <!-- <li class="list-group-item"><a href="#" ><?php echo $question_text ?></a></li> -->
+                            <button class="btn btn-default q-button" id="<?php echo $question_key ?>" title="<?php echo $question_text ?>" data-toggle="button">
+                                <?php echo $question_key ?>
+                            </button>
+                        <?php }?>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <?php } ?>
         </div>
-        <div class="col-md-9 well">
-        <h4>These questions will be asked:</h4>
-            <ul class="list-group">
-                <?php foreach ($this->questions['General'] as $key => $question_question) { ?> 
-                    <li class="list-group-item"><?php echo '<b>'.$key.'</b> '.$question_question; ?></li>
-                <?php  } ?>
-            </ul>
-        </div>
-    </div>    
+    </div>
+    <div class="col-md-8">
+        <h3>Questionnaire</h3>
+        <ul class="list-group">
+        <?php foreach ($this->questions as $key => $question) {
+            foreach ($question as $question_key => $question_text ) { ?>
+                <li class="list-group-item selected-question-list" id="q_<?php echo $question_key?>">
+                    <span class="badge"><?php echo $question_key ?></span>
+                    <?php echo $question_text ?>
+                </li>
+        <?php   }
+        } ?>
+        </ul>
+        <br>
+        <a class="btn btn-success btn-lg" href="<?php echo $this->url('questionaire-builder/build-interface',array('action' => 'done')) ?>">Save Questionnaire</a>
+    </div>
 </div>
-<div class="row">
-    <div class="col-md-12 ">
-        <h3>Step 3</h3>
-        Please confirm everything is correct and press the button below.<br>
-        <a class="btn btn-success btn-lg" href="<?php echo $this->url('questionaire-builder/build-interface',array('action' => 'done')) ?>">Done</a>
-    </div>  
 </div>
-
-

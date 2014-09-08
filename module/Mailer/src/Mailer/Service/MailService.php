@@ -31,7 +31,7 @@ class MailService implements ServiceLocatorAwareInterface
 		$mail = new Mail\Message();
 		$module_config = $this->getModuleConfig();
 		
-		$body = "Dear Manager, Please review you responents: " . $module_config['review_respondent_link'];
+		$body = "Dear Manager, Please review you respondents: " . $module_config['review_respondent_link'];
 		$mail->setBody($body);
 		$mail->setSubject('SSR Invitation');
 		$mail->setFrom($module_config['sender']);
