@@ -1,12 +1,17 @@
 <?php $this->headScript()->prependFile($this->basePath().'/js/admin/builder/builder.js'); ?>
 <div class="page-title"><h2>Questionnaire Builder</h2></div>
+<div class="row">
+    <div class="col-md-12">
+    <?php echo $this->adminTabsView ?>
+    </div>
+</div>
 <div class="container">
 <div class="row">
     <div class="col-md-12">
         <label for="population">What population do you want to track performance?</label><br>
         <input  id="population" type="checkbox"> SSR
         <hr>
-        <label for="country">What county?</label><br>
+        <label for="country">What country?</label><br>
         <input  id="country" type="checkbox"> USA
     </div>
 </div>

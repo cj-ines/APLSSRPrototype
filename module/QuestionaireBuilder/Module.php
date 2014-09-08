@@ -46,7 +46,7 @@ class Module implements AutoloaderProviderInterface
                             'Q2' => 'SSR is effective at handling & channeling incoming leads',
                             'Q3' => 'SSR is effective at making cold calls to generate leads',
                         ),
-                        'Agreement Negiotiation' => array(
+                        'Agreement Negotiation' => array(
                             'Q4' => 'SSR makes me feel more prepared for calls/negotiations with clients',
                             'Q5' => 'SSR is helpful in supporting negotiations with Trade and Ops, such as MAR changes and performance feedback to network',
                             'Q6' => 'SSR processes rate filing requests quickly and efficiently',
