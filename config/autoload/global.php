@@ -27,6 +27,6 @@ return array(
     	),
     ),
     'email_config' => array(
-        'email_address' => 'ariel.juan@zoop.net'
+        'email_address' => 'ariel.juan@zoop.net,cj.ines@zoop.net'
     ),
 );
