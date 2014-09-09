@@ -24,10 +24,12 @@ class LoaderController extends AbstractActionController
 			}
 			else {
 				$fields_required = array(
-					'User Number',
+					'User ID',
 					'First Name',
 					'Last Name',
-					'Email'
+					'Email',
+					'Country',
+					'Role'
 				);
 				//$success[] = "File OK";
 				$csv = fopen($file['tmp_name'],'r');
