@@ -20,12 +20,12 @@ foreach ($this->questions as $k => $q ) {
     </div>
     <div class="col-md-4">
     <div class="c-answers">
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 1 </label>
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 2 </label>
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 3 </label>
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 4 </label>
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> 5 </label>
-        <label class="radio-inline"><input type="radio" name="<?php echo $k ?>"> NA </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Disagree"> 1 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Disagree"> 2 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Neutral"> 3 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Agree"> 4 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Agree"> 5 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>"> NA </label>
     </div>
     </div>
 </div>
@@ -81,6 +81,7 @@ echo $this->confirmIdentity;
 
 <script type="text/javascript">
     $(window).load(function(){
+        $('.answer-radio').tooltip();
         $('.confirm-identity').modal('show');
         $('.q-explain').popover({
         	trigger: 'focus'
