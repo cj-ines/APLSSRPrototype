@@ -1,10 +1,13 @@
 <?php $this->headScript()->prependFile($this->basePath().'/js/admin/builder/builder.js'); ?>
 <div class="page-title"><h2>Questionnaire Builder</h2></div>
+<div class="container">
 <div class="row">
     <div class="col-md-12">
     <?php echo $this->adminTabsView ?>
     </div>
 </div>
+</div>
+<hr>
 <div class="container">
 <div class="row">
     <div class="col-md-12">
@@ -13,6 +16,9 @@
         <hr>
         <label for="country">What country?</label><br>
         <input  id="country" type="checkbox"> USA
+        <input  id="country" type="checkbox"> Netherlands
+        <input  id="country" type="checkbox"> Japan
+        <input  id="country" type="checkbox"> China
     </div>
 </div>
     <br>
@@ -54,14 +60,14 @@
         <?php foreach ($this->questions as $key => $question) {
             foreach ($question as $question_key => $question_text ) { ?>
                 <li class="list-group-item selected-question-list" id="q_<?php echo $question_key?>">
-                    <span class="badge"><?php echo $question_key ?></span>
-                    <?php echo $question_text ?>
+                    <span class="badge"><?php echo $key ?></span>
+                    <strong><?php echo $question_key ?></strong> <?php echo $question_text ?>
                 </li>
         <?php   }
         } ?>
         </ul>
         <br>
-        <a class="btn btn-success btn-lg" href="<?php echo $this->url('questionaire-builder/build-interface',array('action' => 'done')) ?>">Save Questionnaire</a>
+        <a class="btn btn-default btn-lg" href="<?php echo $this->url('questionaire-builder/build-interface',array('action' => 'done')) ?>">Save Questionnaire</a>
     </div>
 </div>
 </div>

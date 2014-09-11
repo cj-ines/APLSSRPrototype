@@ -55,7 +55,10 @@ class Module implements AutoloaderProviderInterface
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new User());
                     return new TableGateway('user',$dbAdapter,null,$resultSetPrototype);
-                }
+                },
+                'DummyUsers' => function($sm) {
+                        $users = array();
+                    }
             )
         );
     }

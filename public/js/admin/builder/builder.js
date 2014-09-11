@@ -3,7 +3,8 @@
  */
 jQuery(function(){
     $('.q-button').tooltip();
-    $('.selected-question-list').hide();
+    // $('.selected-question-list').hide();
+    $('.q-button').addClass('active');
     $('.q-button').click(function() {
        // $( this).setAttribute()
         var qid;
