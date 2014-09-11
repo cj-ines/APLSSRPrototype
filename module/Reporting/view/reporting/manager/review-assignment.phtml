@@ -1,26 +1,31 @@
 <div class="page-title"><h2>Review Assignment</h2></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<?php echo $this->reviewTable; ?>
+		</div>
+	</div>
+</div>
 
-<div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="panel-title">Your reviewers</span></div>
-			<table class="table">
-				<tr><th>Reviewer</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Country</th><th>Role<th>Action</th></tr>
-				<tr><td>1</td><td>Raphael</td><td> Young</td><td>raphael.young@host.com</td><td>USA</td><td>ESR</td><td><button data-toggle="modal" data-target=".change-reviewer" class="btn btn-default btn-xs">Change</button></td></tr>
-				<tr><td>2</td><td>Mike</td><td> Tyson</td><td>mike.tyson@host.com</td><td>USA</td><td>ESR</td><td><button data-toggle="modal" data-target=".change-reviewer" class="btn btn-default btn-xs">Change</button></td></tr>
-				<tr><td>3</td><td>Michel</td><td> Angelo</td><td>michelangelo@host.com</td><td>USA</td><td>ESR</td><td><button data-toggle="modal" data-target=".change-reviewer" class="btn btn-default btn-xs">Change</button></td></tr>
-			</table>
-			<div class="panel-footer">
-				<a class="btn btn-success" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
-				<!--<a class="btn btn-default">Reject Reviewers</a> --> <i>Clicking <strong>Approve</strong> will send email invitation to the reviewer selected.</i>
+<!-- MODAL -->
+<div class="modal  fade change-reviewer" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<span class="modal-title" id="changeRevModalLabel">Reviewers</span>
+			</div>
+			<div class="modal-body">
+				<?php echo $this->assignment; ?>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-<!-- MODAL -->
-<div class="modal fade change-reviewer" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade approve-reviewer" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -28,11 +33,10 @@
 				<span class="modal-title" id="changeRevModalLabel">Select reviewer</span>
 			</div>
 			<div class="modal-body">
-				<select class="form-control">
-				</select>
+				
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-success" data-dismiss="modal">Done</button>
+				<button class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

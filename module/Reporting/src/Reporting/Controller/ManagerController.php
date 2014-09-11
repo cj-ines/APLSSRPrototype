@@ -17,7 +17,12 @@ class ManagerController extends AbstractActionController
 
 	public function reviewAssignmentAction()
 	{
+		$review_table_view = new ViewModel();
+		$review_table_view->setTemplate('reporting/manager/parts/review-table');
+		$assignment_table = new ViewModel();
+		$assignment_table->setTemplate('reporting/manager/parts/assignments');
 		$view = new ViewModel();
+		$view->addChild($review_table_view,'reviewTable')->addChild($assignment_table,'assignment');
 		return $view;
 	}
 	
