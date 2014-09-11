@@ -57,7 +57,7 @@ return array(
                            ),
                            'defaults' => array(
                                'controller' => 'manager',
-                               'action' => 'index',
+                               'action' => 'review-assignment',
                            ), ), ),
                      'loader-interface' => array(
                        'type' => 'Segment',
