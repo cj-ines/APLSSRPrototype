@@ -40,3 +40,7 @@
 .c-pagination-footer {
 	margin: 2px;
 }
+
+.not-answered-alert {
+	border: #ff3333 1px solid;
+}

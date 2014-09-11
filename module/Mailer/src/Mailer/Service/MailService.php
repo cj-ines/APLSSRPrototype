@@ -22,7 +22,8 @@ class MailService implements ServiceLocatorAwareInterface
 	public function getEmailCopy()
 	{
 		$config = $this->getServiceLocator()->get('Config');
-		return $config['email_config']['email_address'];
+		$emails =  $config['email_config']['email_address'];
+		return explode(",", $emails);
 	}
 
 	public function sendReviewInvitation()
@@ -33,9 +34,9 @@ class MailService implements ServiceLocatorAwareInterface
 		
 		$body = "Dear Manager, Please review you respondents: " . $module_config['review_respondent_link'];
 		$mail->setBody($body);
-		$mail->setSubject('SSR Invitation');
+		$mail->setSubject('Manager Invitation');
 		$mail->setFrom($module_config['sender']);
-		$mail->setTo($this->getEmailCopy());
+		$mail->setTo($this->getEmailCopy() );
 		$mailer->send($mail);
 	}
 
@@ -48,7 +49,20 @@ class MailService implements ServiceLocatorAwareInterface
 		$mail->setSubject('Survey Invitation');
 		$mail->setBody($body);
 		$mail->setFrom($module_config['sender']);
-		$mail->setTo($this->getEmailCopy());
+		$mail->setTo($this->getEmailCopy() );
+		$mailer->send($mail);
+	}
+
+	public function sendReminderInvitation()
+	{
+		$mailer = $this->getMailerService();
+		$module_config = $this->getModuleConfig();
+		$mail = new Mail\Message();
+		$body = "Dear Respondent, This is just a reminder to commplete the survey: " . $module_config['survey_link'];
+		$mail->setSubject('Survey Reminder');
+		$mail->setBody($body);
+		$mail->setFrom($module_config['sender']);
+		$mail->setTo($this->getEmailCopy() );
 		$mailer->send($mail);
 	}
 

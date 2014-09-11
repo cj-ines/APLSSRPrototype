@@ -1,7 +1,7 @@
 <div class="page-title"><h3 id="questionnaire-title"><?php //echo $this->mode; ?> Online Survey</h3></div>
 <hr>
 <div class="">
-	<h4>Hello <strong>John Doe</strong>. You are being surveyed about SSR <strong>Mike Bob</strong> 
+	<h4>Hello <strong>John Doe</strong>. You are being surveyed about SSR / Trade Analyst <strong>Mike Bob</strong> 
 	<a class="btn btn-xs btn-default" href="<?php echo $this->url('reporting/site-pages',array('action' => 'contact-us')) ?>" target="_new" data-toggle="modal"><span class="glyphicon glyphicon-flag"></span> Report Error</a> </h4>
     <br>
     <div>
@@ -14,7 +14,7 @@
 foreach ($this->questions as $k => $q ) {
 ?>
 <div class="container">
-<div class="row well well-sm">
+<div class="row well well-sm question-well <?php echo $k?> not-answered" >
     <div class="col-md-8">
         <span class="badge"><?php echo $k ?> </span> <?php echo $q ?>
     </div>
@@ -32,9 +32,7 @@ foreach ($this->questions as $k => $q ) {
 </div>
 <?php } ?>
 
-<a class="btn btn-primary btn-lg" href="<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>">Submit Answers</a>
-
-
+<a id="submit-answer" class="btn btn-primary btn-lg" href="#" onclick="submitAnswer()">Submit Answers</a>
 
 <div class="modal fade report-problem" >
     <div class="modal-dialog">
@@ -88,6 +86,19 @@ echo $this->confirmIdentity;
         });
         $('#questionnaire-title').dblclick(function(){
            $('.select-questionnaire').modal('show');
-        })
+        });
+         var debug;
+        $('.answer-radio').click(function() {
+            $(this).closest('.question-well').removeClass('not-answered');
+            $(this).closest('.question-well').removeClass('not-answered-alert');
+            console.log($(this).closest('.question-well').attr('class'));
+        });      
     });
+
+    function submitAnswer() {
+       $('.not-answered').addClass('not-answered-alert');
+       if (!$('.question-well').hasClass('not-answered')) {
+            $('#submit-answer').attr('href','<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>');
+       }  
+    }
 </script>

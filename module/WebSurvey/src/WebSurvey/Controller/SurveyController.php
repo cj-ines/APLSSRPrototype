@@ -69,6 +69,8 @@ class SurveyController extends AbstractActionController
 
     public function postponeAction() 
     {
+        $mailer = $this->getServiceLocator()->get('MailService');
+        $mailer->sendReminderInvitation();
         return new ViewModel();
     }
 

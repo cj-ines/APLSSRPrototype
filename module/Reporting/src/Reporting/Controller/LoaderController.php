@@ -46,7 +46,7 @@ class LoaderController extends AbstractActionController
 
 				if ($flag<count($fields_required)) {
 					$list = implode(", ", $unknown);
-					$error[] = 'Unregnized fields: ' .$list;
+					$error[] = 'Unrecognized fields: ' .$list;
 					$error[] = 'There are fields that are missing';
 				}
 				else {
