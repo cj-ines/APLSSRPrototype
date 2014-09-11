@@ -7,6 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
+    
 return array(
     'router' => array(
         'routes' => array(
@@ -55,6 +56,7 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(
@@ -86,6 +88,26 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+    ),
+    'navigation' => array(
+        'default' =>array(
+            array(
+                'label' => 'Reporting',
+                'route' => 'reporting/dashboard-interface'
+            ),
+            array(
+                'label' => 'Online Survey',
+                'route' => 'web-survey'
+            ),
+            array(
+                'label' => 'Admin',
+                'route' => 'reporting/admin-interface'
+            ),
+            array(
+                'label' => 'Manager',
+                'route' => 'reporting/manager-interface'
+            ),
         ),
     ),
 );
