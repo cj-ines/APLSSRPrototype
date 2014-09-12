@@ -1,15 +1,23 @@
+<?php echo $this->headScript()->appendFile($this->basePath() . '/js/reporting/manager/review-assignment.js') ?>
+
 <div class="page-title"><h2>Review Assignment</h2></div>
-<div class="container">
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<h5>Hello Manager <b>Mary Jane</b>! The following SSR(s) want your approval.</h5> 
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<?php echo $this->reviewTable; ?>
 		</div>
 	</div>
-</div>
+
 
 <!-- MODAL -->
 <div class="modal  fade change-reviewer" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
+	<div class="modal-dialog modal-xtra-large">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

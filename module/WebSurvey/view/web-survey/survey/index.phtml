@@ -1,4 +1,9 @@
-<div class="page-title"><h3 id="questionnaire-title"><?php //echo $this->mode; ?> Online Survey</h3></div>
+<?php echo $this->headScript()->appendFile($this->basePath() . '/js/web-survey/web-survey.js'); ?>
+<div class="page-title">
+    <h3 id="questionnaire-title">
+        <?php //echo $this->mode; ?> Online Survey
+    </h3>
+</div>
 <hr>
 <div class="">
 	<h4>Hello <strong>John Doe</strong>. You are being surveyed about SSR / Trade Analyst <strong>Mike Bob</strong> 
@@ -32,7 +37,7 @@ foreach ($this->questions as $k => $q ) {
 </div>
 <?php } ?>
 
-<a id="submit-answer" class="btn btn-primary btn-lg" href="#" onclick="submitAnswer()">Submit Answers</a>
+<a class="btn btn-primary btn-lg submit-answer" href="#" onclick="submitAnswer()">Submit Answers</a>
 
 <div class="modal fade report-problem" >
     <div class="modal-dialog">
@@ -76,29 +81,27 @@ foreach ($this->questions as $k => $q ) {
 echo $this->confirmIdentity;
 
  ?>
-
-<script type="text/javascript">
-    $(window).load(function(){
+<script>
+    $(document).ready(function(){
         $('.answer-radio').tooltip();
         $('.confirm-identity').modal('show');
         $('.q-explain').popover({
-        	trigger: 'focus'
+            trigger: 'focus'
         });
         $('#questionnaire-title').dblclick(function(){
            $('.select-questionnaire').modal('show');
         });
-         var debug;
+
         $('.answer-radio').click(function() {
             $(this).closest('.question-well').removeClass('not-answered');
             $(this).closest('.question-well').removeClass('not-answered-alert');
-            console.log($(this).closest('.question-well').attr('class'));
         });      
     });
 
     function submitAnswer() {
        $('.not-answered').addClass('not-answered-alert');
        if (!$('.question-well').hasClass('not-answered')) {
-            $('#submit-answer').attr('href','<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>');
+            $('.submit-answer').attr('href','<?php echo $this->url('web-survey', array('action' => 'thankyou'));?>');
        }  
     }
 </script>

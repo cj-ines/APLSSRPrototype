@@ -44,3 +44,7 @@
 .not-answered-alert {
 	border: #ff3333 1px solid;
 }
+
+.modal-xtra-large {
+	width: 98%;
+}

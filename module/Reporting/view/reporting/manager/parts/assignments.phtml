@@ -1,27 +1,60 @@
 <div class="panel panel-default">
 			<table class="table">
-				<tr><th>Reviewer</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Country</th><th>Role<th>Change to</th></tr>
-				<tr><td>1</td><td>Raphael</td><td> Young</td><td>raphael.young@host.com</td><td>USA</td><td>ESR</td><td>
+			<tr>
+				<th>Reviewer</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Country</th>
+				<th>Role</th>
+				<th>Change to</th>
+				<th></th>
+			</tr>	
+			<tr class="subjet-row">
+				<td>1</td>
+				<td>Raphael</td>
+				<td> Young</td>
+				<td>raphael.young@host.com</td>
+				<td>USA</td>
+				<td>ESR</td><td>
 					<select class="form-control">
 						<option>Donathelo Dela Cruz</option>
 						<option>Delo Manaloto</option>
 					</select>
-				</td></tr>
-				<tr><td>2</td><td>Mike</td><td> Tyson</td><td>mike.tyson@host.com</td><td>USA</td><td>ESR</td>
-				<td>
+				</td>
+				<td><button class="btn btn-primary approve-button">Approve</button></td>
+			</tr>
+			<tr class="subjet-row">
+				<td>1</td>
+				<td>Raphael</td>
+				<td> Young</td>
+				<td>raphael.young@host.com</td>
+				<td>USA</td>
+				<td>ESR</td><td>
 					<select class="form-control">
 						<option>Donathelo Dela Cruz</option>
 						<option>Delo Manaloto</option>
 					</select>
-				</td></tr>
-				<tr><td>3</td><td>Michel</td><td> Angelo</td><td>michelangelo@host.com</td><td>USA</td><td>ESR</td><td>
+				</td>
+				<td><button class="btn btn-primary approve-button">Approve</button></td>
+			</tr>
+			<tr class="subjet-row">
+				<td>1</td>
+				<td>Raphael</td>
+				<td> Young</td>
+				<td>raphael.young@host.com</td>
+				<td>USA</td>
+				<td>ESR</td><td>
 					<select class="form-control">
 						<option>Donathelo Dela Cruz</option>
+						<option>Delo Manaloto</option>
 					</select>
-				</td></tr>
+				</td>
+				<td><button class="btn btn-primary approve-button">Approve</button></td>
+			</tr>
 			</table>
 			<div class="panel-footer">
-				<a class="btn btn-success" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
-				<!--<a class="btn btn-default">Reject Reviewers</a> --> <i>Clicking <strong>Approve</strong> will send email invitation to the reviewer selected.</i>
+				<!--<a class="btn btn-success" aria-hidden="true" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
+				<a class="btn btn-default">Reject Reviewers</a> --> <i>Clicking <strong>Approve</strong> will send email invitation to the reviewer selected.</i>
 			</div>
 		</div>
