@@ -5,28 +5,30 @@
 			<th>Last Name</th>
 			<th>Role</th>
 			<th>Country</th>
+			<th>Status</th>
 			<th></th>
 		</tr>
-		<tr>
-			<td>John</td>
-			<td>Doe</td>
-			<td>SSR / Trade Analyst</td>
-			<td>US</td>
+		<?php foreach ($this->data as $subject) { ?> 
+		<tr class="active">
+			<td><?php echo $subject['first_name'] ?></td>
+			<td><?php echo $subject['last_name'] ?></td>
+			<td><?php echo $subject['role'] ?></td>
+			<td><?php echo $subject['country'] ?></td>
+			<td>
+				<?php 
+				if ($subject['status'] != 'no') {
+					$class = 'label-success';
+					$label = 'Approved';
+				}
+				else {
+					$class = 'label-info';
+					$label = 'Pending';
+				}
+				?>
+				<span class="label <?php echo $class ?>"><?php echo $label ?></span>
+			</td>
 			<td><button class="show-reviewer btn btn-primary " data-toggle="modal" data-target=".change-reviewer">Show Reviewers</button></td>
 		</tr>
-		<tr>
-			<td>Stan</td>
-			<td>Neeson</td>
-			<td>SSR / Trade Analyst</td>
-			<td>US</td>
-			<td><button class="show-reviewer btn btn-success ">Mgr. Approved</button></td>
-		</tr>
-		<tr>
-			<td>Stan</td>
-			<td>Neeson</td>
-			<td>SSR / Trade Analyst</td>
-			<td>US</td>
-			<td><button class="show-reviewer btn btn-success ">Mgr. Approved</button></td>
-		</tr>
+		<?php } ?>
 	</table>
 </div>

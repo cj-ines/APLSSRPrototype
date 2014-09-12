@@ -1,3 +1,7 @@
+<?php 
+	echo $this->headScript()->appendFile($this->basePath().'/js/reporting/dashboard/dashboard.js'); 
+	echo $this->headLink()->appendStylesheet($this->basePath().'/css/reporting/dashboard.css');
+?>
 <div class="page-title"><h2>Dashboard</h2></div>
 <div class="row">
 	<div class="col-md-12"><?php echo $this->filters; ?></div>

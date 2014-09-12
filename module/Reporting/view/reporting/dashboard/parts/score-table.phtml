@@ -8,7 +8,7 @@
 			<th>Questions questions</th>
 			<th>Rater 1</th>
 			<th>Rater 2</th>
-			<th>Av Score</th>
+			<th class="active">Av Score</th>
 		</tr>
 		<?php foreach ($this->scorings as $key => $questions) {
 			$first = true; ?>
@@ -20,10 +20,16 @@
 			</tr><tr>
 			<?php } ?>
 			<?php foreach ($questions as $code =>  $question) {?>
-			<td><span class="question-text"><?php echo $code.' - '.$question; ?></span></td>
-			<td>3</td>
-			<td>3</td>
-			<td>3</td>
+			<td>
+				<span class="question-text"><?php echo $code.' - '.$question; ?>
+				</span>
+			</td>
+			<td>
+				<span class="score-label" title="Double Click to edit">3</span>
+				
+			</td>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
+			<td class="active">3</td>
 			</tr>
 			<?php } ?>
 		<?php } ?>
@@ -32,11 +38,48 @@
 			<td></td>
 			<td>3</td>
 			<td>3</td>
-			<td>3</td>
+			<td class="active">3</td>
 
 		</tr>
 	</table>
 	<div class="panel-footer">
 		<button class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</button>
+	</div>
+</div>
+
+<div class="modal fade" id="scoreModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="modal-title">Change score</span>
+			</div>
+			<div class="modal-body score-modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-md-4 control-label">Score</label>
+						<div class="col-md-2">
+							<select class="form-control">
+								<?php
+									for ($i = 1 ; $i<6; $i++) {
+										echo '<option>' . $i .'</option>';
+									}
+								?>
+								<option>NA</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Reason</label>
+						<div class="col-md-6">
+							<textarea class="form-control score-reason-control"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary">Save</button>
+				<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
 	</div>
 </div>
