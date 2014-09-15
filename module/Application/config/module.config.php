@@ -102,7 +102,19 @@ return array(
             ),
             array(
                 'label' => 'Admin',
-                'route' => 'reporting/admin-interface'
+                'route' => 'reporting/admin-interface',
+                'pages' => array(
+                    array(
+                        'label' => 'Assigments',
+                        'route' => 'reporting/admin-interface',
+                        'action' => 'assignment',
+                    ),
+                     array(
+                        'label' => 'questionnaire',
+                        'route' => 'questionaire-builder/build-interface',
+                        'action' => 'questionnaire',
+                    ),
+                ),
             ),
             array(
                 'label' => 'Manager',

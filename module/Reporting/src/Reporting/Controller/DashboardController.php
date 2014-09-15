@@ -61,8 +61,14 @@ class DashboardController extends AbstractActionController
     	));
     	$score_table_view->setTemplate('reporting/dashboard/parts/score-table');    	
     	$view = new ViewModel();
-    	$view->addChild($score_table_view,'scoreTable');
-    	$view->addChild($filter_view,'filters');
+
+        $campaign_progress_view = new ViewModel();
+        $campaign_progress_view->setTemplate('reporting/dashboard/parts/campaign-progress');
+
+    	$view->addChild($score_table_view,'scoreTable')
+            ->addChild($filter_view,'filters')
+            ->addChild($campaign_progress_view,'campaignProgress');
+        ;
     	return $view;
     }
     

@@ -7,7 +7,7 @@
 	<div class="col-md-12"><?php echo $this->filters; ?></div>
 </div>
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-4 hidden">
 		<div class="panel panel-default">
 			<div class="panel-heading"><span class="panel-title">Response Rate</span></div>
 			<div class="panel-body">
@@ -21,13 +21,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-8">
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="panel-title">Campaign progress</span></div>
-			<div class="panel-body">
-				{{Placeholder}}
-			</div>
-		</div>
+	<div class="col-md-12">
+		<?php echo $this->campaignProgress; ?>
 	</div>
 </div>
 <div class="row">
