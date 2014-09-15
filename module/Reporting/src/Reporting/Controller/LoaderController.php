@@ -16,7 +16,7 @@ class LoaderController extends AbstractActionController
 		$success = null;
 		if ($this->getRequest()->isPost()) {
 			$user_loader_form->setData($this->getRequest()->getPost());
-			$ext_valid = new \Zend\Validator\File\Extension(array('csv'));
+			$ext_valid = new \Zend\Validator\File\Extension(array('xls','xlsx'));
 			$file = $this->params()->fromFiles('fileUpload');
 			if (!$ext_valid->isValid($file)) {
 				//$error = 'INVALID_FILE_EXT';
@@ -24,12 +24,12 @@ class LoaderController extends AbstractActionController
 			}
 			else {
 				$fields_required = array(
-					'User ID',
+					/* 'User ID',
 					'First Name',
 					'Last Name',
 					'Email',
 					'Country',
-					'Role'
+					'Role' */
 				);
 				//$success[] = "File OK";
 				$csv = fopen($file['tmp_name'],'r');

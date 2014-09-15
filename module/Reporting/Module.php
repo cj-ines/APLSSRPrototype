@@ -75,7 +75,7 @@ class Module implements AutoloaderProviderInterface
                                 'country' => 'USA',
                                 'email' => 'gary.oak@email.com',
                                 'role' => 'ESR',
-                                'status' => 'yes'
+                                'status' => 'no'
                             ),
                             array(
                                 'first_name' => 'Horihito',
