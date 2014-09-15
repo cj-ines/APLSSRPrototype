@@ -58,6 +58,115 @@ class Module implements AutoloaderProviderInterface
                     $upload_form_view = new \Zend\View\Model\ViewModel(array('userLoaderForm' => $form));
                     $upload_form_view->setTemplate('reporting/loader/parts/upload-form');
                     return $upload_form_view;
+                },
+
+                'SampleEmployees' => function ($sm) {
+                    $data[] = array(
+                        'first_name' => 'John',
+                        'last_name' => 'Doe',
+                        'role' => 'SSR / Trade Analyst',
+                        'email' => 'john.doe@email.com',
+                        'status' => 'no',
+                        'country' => 'USA',
+                        'reviewers' => array(
+                            array(
+                                'first_name' => 'Gary',
+                                'last_name' => 'Oak',
+                                'country' => 'USA',
+                                'email' => 'gary.oak@email.com',
+                                'role' => 'ESR',
+                                'status' => 'yes'
+                            ),
+                            array(
+                                'first_name' => 'Horihito',
+                                'last_name' => 'Kazuma',
+                                'country' => 'USA',
+                                'email' => 'hkazuma@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                            array(
+                                'first_name' => 'Juddie',
+                                'last_name' => 'Abbot',
+                                'country' => 'USA',
+                                'email' => 'judabbot@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                        ),
+                    );
+
+                    $data[] = array(
+                        'first_name' => 'Diana Rose',
+                        'last_name' => 'Stalone',
+                        'role' => 'SSR / Trade Analyst',
+                        'email' => 'diana@email.com',
+                        'country' => 'USA',
+                        'status' => 'no',
+                        'reviewers' => array(
+                            array(
+                                'first_name' => 'John',
+                                'last_name' => 'Presley',
+                                'country' => 'USA',
+                                'email' => 'johnp@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                            array(
+                                'first_name' => 'Markus',
+                                'last_name' => 'Camby',
+                                'country' => 'USA',
+                                'email' => 'mcmc@email.com',
+                                'role' => 'ESR',
+                                'status' => 'yes'
+                            ),
+                            array(
+                                'first_name' => 'Kolehai',
+                                'last_name' => 'Haineko',
+                                'country' => 'USA',
+                                'email' => 'khaineko@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                             array(
+                                'first_name' => 'Domo Arigato San',
+                                'last_name' => 'Haineko',
+                                'country' => 'USA',
+                                'email' => 'domoa@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                              array(
+                                'first_name' => 'Ho Chi ',
+                                'last_name' => 'Mihn',
+                                'country' => 'USA',
+                                'email' => 'saigon@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                        ),
+                    );
+
+                    $data[] = array(
+                        'first_name' => 'Cristopher',
+                        'last_name' => 'Dela Mortiz',
+                        'role' => 'SSR / Trade Analyst',
+                        'email' => 'cmortiz@email.com',
+                        'country' => 'USA',
+                        'status' => 'yes',
+                        'reviewers' => array(
+                            array(
+                                'first_name' => 'John',
+                                'last_name' => 'Presley',
+                                'country' => 'USA',
+                                'email' => 'johnp@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                        ),
+                    );
+
+                    return $data;
                 }
             )
         );

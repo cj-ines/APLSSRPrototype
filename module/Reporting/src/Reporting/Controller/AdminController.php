@@ -6,14 +6,17 @@ use Zend\View\Model\ViewModel;
 
 class AdminController extends AbstractActionController 
 {
+	protected $data;
+
 	public function indexAction() 
 	{
 
 		$upload_form_view = $this->getServiceLocator()->get('UserLoaderFormFactory');
+		$data = $this->getData();
 		$view = new ViewModel();
 		$pagination_search_view = new ViewModel();
 		$pagination_search_view->setTemplate('reporting/admin/parts/pagination-search');
-		$user_table_view = new ViewModel();
+		$user_table_view = new ViewModel(array('data' => $data));
 		$user_table_view->setTemplate('reporting/admin/parts/user-table');
 		$user_table_view->addChild($pagination_search_view,'paginationSearch');
 		$tab_menu_view = new ViewModel();
@@ -28,10 +31,11 @@ class AdminController extends AbstractActionController
 	public function assignmentAction() 
 	{
 		$upload_form_view = $this->getServiceLocator()->get('UserLoaderFormFactory');
+		$data = $this->getData();
 		$view = new ViewModel();
 		$pagination_search_view = new ViewModel();
 		$pagination_search_view->setTemplate('reporting/admin/parts/pagination-search');
-		$assignment_table_view = new ViewModel();
+		$assignment_table_view = new ViewModel(array('data' => $data));
 		$assignment_table_view->setTemplate('reporting/admin/parts/assignment-table');
 		$assignment_table_view->addChild($pagination_search_view,'paginationSearch');
 		$tab_menu_view = new ViewModel();
@@ -47,4 +51,11 @@ class AdminController extends AbstractActionController
 	{
 		return new ViewModel();
 	}
+
+	public function getData() {
+        if (!isset($this->data)) {
+            $this->data = $this->getServiceLocator()->get('SampleEmployees');
+        }
+        return $this->data;
+    }
 }

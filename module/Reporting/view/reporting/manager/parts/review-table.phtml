@@ -9,7 +9,7 @@
 			<th></th>
 		</tr>
 		<?php foreach ($this->data as $subject) { ?> 
-		<tr class="active">
+		<tr>
 			<td><?php echo $subject['first_name'] ?></td>
 			<td><?php echo $subject['last_name'] ?></td>
 			<td><?php echo $subject['role'] ?></td>
@@ -18,11 +18,11 @@
 				<?php 
 				if ($subject['status'] != 'no') {
 					$class = 'label-success';
-					$label = 'Approved';
+					$label = 'Changed';
 				}
 				else {
 					$class = 'label-info';
-					$label = 'Pending';
+					$label = 'No Change';
 				}
 				?>
 				<span class="label <?php echo $class ?>"><?php echo $label ?></span>

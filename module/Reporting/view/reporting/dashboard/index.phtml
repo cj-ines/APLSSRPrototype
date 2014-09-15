@@ -2,7 +2,7 @@
 	echo $this->headScript()->appendFile($this->basePath().'/js/reporting/dashboard/dashboard.js'); 
 	echo $this->headLink()->appendStylesheet($this->basePath().'/css/reporting/dashboard.css');
 ?>
-<div class="page-title"><h2>Dashboard</h2></div>
+<div class="page-header"><div class="page-title"><h2>Dashboard</h2></div></div>
 <div class="row">
 	<div class="col-md-12"><?php echo $this->filters; ?></div>
 </div>
@@ -11,7 +11,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><span class="panel-title">Response Rate</span></div>
 			<div class="panel-body">
-				<strong>1 out of 3</strong>
+				<h5>6 out of 6 <strong>100%</strong></h5>
 				<!-- <table class="table">
 					<tr><td>Mark Twain</td><td><span class="label label-success">Completed</span></td></tr>
 					<tr><td>Obi Wan Kenobi</td><td><span class="label label-warning">Postponed</span></td></tr>

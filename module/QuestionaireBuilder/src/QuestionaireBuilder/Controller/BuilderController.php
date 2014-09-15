@@ -14,7 +14,7 @@ use Zend\View\Model\ViewModel;
 
 class BuilderController extends AbstractActionController
 {
-    public $questions;
+    protected $questions;
 
     public function indexAction()
     {
@@ -22,6 +22,18 @@ class BuilderController extends AbstractActionController
     }
     
     public function buildAction()
+    {
+        $questions = $this->getQuestions();
+        $admin_tabs_view = new ViewModel();
+        $admin_tabs_view->setTemplate('reporting/admin/parts/tabs-menu');
+        $view =  new ViewModel(array(
+            'questions' => $questions,
+        ));
+        $view->addChild($admin_tabs_view,'adminTabsView');
+        return $view;
+    }
+
+    public function questionnaireAction()
     {
         $questions = $this->getQuestions();
         $admin_tabs_view = new ViewModel();
@@ -59,4 +71,6 @@ class BuilderController extends AbstractActionController
         }
         return $this->questions;
     }
+
+    
 }

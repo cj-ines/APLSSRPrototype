@@ -48,3 +48,10 @@
 .modal-xtra-large {
 	width: 98%;
 }
+
+.hidden{
+	visibility: hidden;
+	height: 0px;
+	margin: 0px;
+	padding: 0px;
+}

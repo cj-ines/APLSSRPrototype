@@ -8,6 +8,10 @@
 			<th>Questions questions</th>
 			<th>Rater 1</th>
 			<th>Rater 2</th>
+			<th>Rater 3</th>
+			<th>Rater 4</th>
+			<th>Rater 5</th>
+			<th>Rater 6</th>
 			<th class="active">Av Score</th>
 		</tr>
 		<?php foreach ($this->scorings as $key => $questions) {
@@ -29,6 +33,10 @@
 				
 			</td>
 			<td><span class="score-label" title="Double Click to edit">3</span></td>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
 			<td class="active">3</td>
 			</tr>
 			<?php } ?>
@@ -36,6 +44,10 @@
 		<tr>
 			<th>Average</th>
 			<td></td>
+			<td>3</td>
+			<td>3</td>
+			<td>3</td>
+			<td>3</td>
 			<td>3</td>
 			<td>3</td>
 			<td class="active">3</td>
@@ -47,7 +59,7 @@
 	</div>
 </div>
 
-<div class="modal fade" id="scoreModal">
+<div class="modal fade edit-score-modal" id="scoreModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">

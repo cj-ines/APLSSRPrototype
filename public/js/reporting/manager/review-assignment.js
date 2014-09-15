@@ -3,14 +3,14 @@ $(document).ready(function() {
 		if ($(this).hasClass('approved')) {
 			$(this).closest('tr').removeClass('success');
 			$(this).attr('class','btn btn-primary');
-			$(this).html('Approve');
+			$(this).html('Change');
 		}
 		else {
 			$(this).closest('tr').addClass('success');
 			$(this).attr('class','btn btn-success approved');
-			$(this).html('Approved');
+			$(this).html('Changed');
 		}
-		sss
+		exit(0);
 	})
 
 });

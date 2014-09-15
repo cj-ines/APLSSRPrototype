@@ -31,7 +31,7 @@ return array(
                     	    ),
                    			'defaults' => array(
                    				'controller' => 'builder',
-                   				'action' => 'build',
+                   				'action' => 'questionnaire',
                    			),
                    		),
                    	),
