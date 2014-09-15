@@ -1,6 +1,7 @@
 <div class="panel panel-default">
 	<table class="table review-table">
 		<tr>
+			<th>ID</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Role</th>
@@ -8,8 +9,9 @@
 			<th>Status</th>
 			<th></th>
 		</tr>
-		<?php foreach ($this->data as $subject) { ?> 
+		<?php foreach ($this->data as $key => $subject) { ?> 
 		<tr>
+			<td><?php echo $key; ?>
 			<td><?php echo $subject['first_name'] ?></td>
 			<td><?php echo $subject['last_name'] ?></td>
 			<td><?php echo $subject['role'] ?></td>

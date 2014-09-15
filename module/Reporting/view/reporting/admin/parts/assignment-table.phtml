@@ -4,6 +4,7 @@
 	</div>
 	<table class="table">
 		<tr>
+			<th>Employee ID</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Role</th>
@@ -13,6 +14,7 @@
 		</tr>
 		<?php foreach ($this->data as $field => $subject) { ?> 
 		<tr>
+			<td><?php echo $field ?></td>
 			<td><?php echo $subject['first_name'] ?></td>
 			<td><?php echo $subject['last_name'] ?></td>
 			<td><?php echo $subject['role'] ?></td>

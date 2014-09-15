@@ -10,9 +10,9 @@
 				<th>Change to</th>
 				<th></th>
 			</tr>
-			<?php foreach ($this->data['reviewers'] as $reviewer) { ?> 
+			<?php foreach ($this->data['reviewers'] as $key => $reviewer) { ?> 
 			<tr class="subjet-row <?php if($reviewer['status']!='no') echo "success" ?>">
-				<td>1</td>
+				<td><?php echo $key ?></td>
 				<td><?php echo $reviewer['first_name'] ?></td>
 				<td><?php echo $reviewer['last_name'] ?></td>
 				<td><?php echo $reviewer['email'] ?></td>
