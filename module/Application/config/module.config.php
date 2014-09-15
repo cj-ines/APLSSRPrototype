@@ -94,7 +94,7 @@ return array(
         'default' =>array(
             array(
                 'label' => 'Reporting',
-                'route' => 'reporting/dashboard-interface'
+            'route' => 'reporting/dashboard-interface'
             ),
             array(
                 'label' => 'Online Survey',

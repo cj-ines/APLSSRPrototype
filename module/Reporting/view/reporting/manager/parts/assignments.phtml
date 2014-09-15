@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-			<table class="table">
+			<table class="table assignments-table">
 			<tr>
 				<th>Reviewer</th>
 				<th>First Name</th>
@@ -11,7 +11,7 @@
 				<th></th>
 			</tr>
 			<?php foreach ($this->data['reviewers'] as $key => $reviewer) { ?> 
-			<tr class="subjet-row <?php if($reviewer['status']!='no') echo "success" ?>">
+			<tr class="subject-row <?php if($reviewer['status']!='no') echo "success" ?>">
 				<td><?php echo $key ?></td>
 				<td><?php echo $reviewer['first_name'] ?></td>
 				<td><?php echo $reviewer['last_name'] ?></td>
@@ -33,13 +33,17 @@
 						else {
 							 ?> <button class="btn btn-xs btn-primary approve-button">Update</button> <?php
 						} ?>
-						<button class="btn btn-default btn-xs">Remove</button>
+						<button class="btn btn-default btn-xs remove-row">Remove</button>
 				</td>
+
 			</tr>
 			<?php } ?>
+			<tr id="last-row" class="hidden">
+
+			</tr>
 			</table>
 			<div class="panel-footer">
 				<!--<a class="btn btn-success" aria-hidden="true" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
-				<a class="btn btn-default">Reject Reviewers</a> --> <button class="btn btn-deprimary">Add Row</button>
+				<a class="btn btn-default">Reject Reviewers</a> --> <button id="add-row" class="btn btn-deprimary">Add Row</button>
 			</div>
 </div>
