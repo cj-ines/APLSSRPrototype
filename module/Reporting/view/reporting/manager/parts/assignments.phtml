@@ -33,7 +33,9 @@
 						else {
 							 ?> <button class="btn btn-xs btn-primary approve-button">Update</button> <?php
 						} ?>
-						<button class="btn btn-default btn-xs remove-row">Remove</button>
+						<button class="btn btn-danger btn-xs remove-row">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
 				</td>
 
 			</tr>
@@ -44,6 +46,6 @@
 			</table>
 			<div class="panel-footer">
 				<!--<a class="btn btn-success" aria-hidden="true" href="<?php echo $this->url('reporting/manager-interface', array('action' => 'approve')); ?>">Approve Reviewers</a>
-				<a class="btn btn-default">Reject Reviewers</a> --> <button id="add-row" class="btn btn-deprimary">Add Row</button>
+				<a class="btn btn-default">Reject Reviewers</a> --> <button id="add-row" class="btn btn-primary">Add Row</button>
 			</div>
 </div>
