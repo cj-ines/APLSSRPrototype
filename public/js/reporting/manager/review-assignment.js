@@ -17,7 +17,7 @@ jQuery(function() {
 			$(this).attr('class','btn btn-success approved btn-xs');
 			$(this).html('Updated');
 		}
-		f
+		
 	})
 
 });
