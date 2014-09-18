@@ -14,11 +14,13 @@ use Zend\View\Model\ViewModel;
 
 class DashboardController extends AbstractActionController
 {
-    public $scoring;
+    protected $scoring;
+    protected $data;
 	public function indexOldAction()
     {
     	$compare = $this->params()->fromQuery('compare');
     	$scorings = $this->getScoring();
+        $data = $this->getData();
         $filters_view = new ViewModel();
         $filters_view->setTemplate('reporting/dashboard/parts/filters');
         $dashbord_view = new ViewModel(array(
@@ -54,7 +56,11 @@ class DashboardController extends AbstractActionController
     
     public function indexAction() {
     	$scorings = $this->getScoring();
-    	$filter_view = new ViewModel();
+        $data = $this->getData();
+    	$filter_view = new ViewModel(array(
+            'scorings' => $scorings,
+            'data' => $data,
+        ));
     	$filter_view->setTemplate('reporting/dashboard/parts/filters');
     	$score_table_view = new ViewModel(array(
     		'scorings' => $scorings, 
@@ -80,5 +86,13 @@ class DashboardController extends AbstractActionController
     		$this->scoring = $this->getServiceLocator()->get('QuestionRepository');
     	}
     	return $this->scoring;
+    }
+
+    public function getData() {
+        if (!isset($this->data)) {
+            $this->data = $this->getServiceLocator()->get('SampleEmployees');
+        }
+
+        return $this->data;
     }
 }

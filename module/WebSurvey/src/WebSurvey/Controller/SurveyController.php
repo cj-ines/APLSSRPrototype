@@ -24,7 +24,7 @@ class SurveyController extends AbstractActionController
         $mode = $modes[$this->params()->fromRoute('mode')];
        
         $view = new ViewModel(array(
-            'questions'=> $questions[$mode],
+            'questions'=> $questions,
             'mode' => $mode,
             'questionnaire' => $modes,
         ));
