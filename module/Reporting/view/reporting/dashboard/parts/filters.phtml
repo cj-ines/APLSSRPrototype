@@ -6,31 +6,20 @@
 					class="c-filter-toggle"> Show/Hide Filters </a>
 			</div>
 			<div class="col-md-4">
-				<div class="btn-group">
-					<a class="btn btn-primary apply-selection" data-toggle="tooltip" title=""
-					href="<?php echo $this->url('reporting/dashboard-interface') ?>">Apply Selection</a>
-					<!-- <a class="btn btn-primary compare-selection" data-toggle="tooltip" title="Compare your current selection to previous selection."
-					href="<?php echo $this->url('reporting').'?compare=true'?>"
-					>Compare Selection</a>
-					<button class="btn btn-primary">?</button> -->
-				</div>
 			</div>
 		</div>
-		<div class="row panel-collapse collapse out" id="filterPanel">
+		<div class="row panel-collapse collapse in" id="filterPanel">
 			<br>
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">Key tasks 
+					<div class="panel-heading">Rationale
 					   <button class="btn btn-xs btn-default">All</button>
 					   <button class="btn btn-xs btn-default">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
-						<input type="checkbox" checked> Lead Generation <br> <input
-							type="checkbox" checked> Agreement Negotiation <br> <input
-							type="checkbox" checked> Post-close <br> <input type="checkbox"
-							checked> Account Admin <br> <input type="checkbox" checked>
-						Internal Admin <br> <input type="checkbox" checked> Sales Planning
-						<br>
+						<?php foreach ($this->scorings as $key => $value) { ?>
+							<input type="checkbox" checked> <?php echo $key; ?><br> 
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -63,23 +52,29 @@
 			</div>  -->
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">SSR
+					<div class="panel-heading">CSR
 					   <button class="btn btn-xs btn-default">All</button>
 					   <button class="btn btn-xs btn-default">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
-						<input name="SSR" type="checkbox" checked> John Doe <br>
-						<input name="SSR" type="checkbox" checked> Micheal Jackson <br>
-						<input name="SSR" type="checkbox" checked> Jackie Chan <br>
-						<input name="SSR" type="checkbox" checked> Emily Lee <br>
-						<input name="SSR" type="checkbox" checked> Fredie Mercury <br>
-						<input name="SSR" type="checkbox" checked> Helen Troy <br>
-						<input name="SSR" type="checkbox" checked> Allan Poe <br>
-						<input name="SSR" type="checkbox" checked> Emmet Brown <br>
+					<?php foreach ($this->data as $employees) { ?>
+						<input name="SSR" type="checkbox" checked> <?php echo $employees['first_name'].' '.$employees['last_name']; ?><br>
+					<?php } ?>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="panel-footer">
+		<div class="btn-group">
+					<a class="btn btn-primary apply-selection" data-toggle="tooltip" title=""
+					href="<?php echo $this->url('reporting/dashboard-interface') ?>">Apply Selection</a>
+					<!-- <a class="btn btn-primary compare-selection" data-toggle="tooltip" title="Compare your current selection to previous selection."
+					href="<?php echo $this->url('reporting').'?compare=true'?>"
+					>Compare Selection</a>
+					<button class="btn btn-primary">?</button> -->
+				</div>
+
 	</div>
 </div>
 <script>
