@@ -17,19 +17,26 @@
 			<?php } else { ?>
 			</tr><tr>
 			<?php } ?>
-			<?php foreach ($questions as $code =>  $question) {?>
+			
+
+			<?php 
+			$score = array();
+			foreach ($questions as $code =>  $question) {
+				$score[$code] = rand(2,10); ?>
 			<td>
 				<span class="question-text"><?php echo $code.' - '.$question; ?>
 				</span>
 			</td>
-			<td class="active">3</td>
+			<td class="active"><?php echo $score[$code]; ?></td>
 			</tr>
 			<?php } ?>
 		<?php } ?>
 		<tr>
-			<th>Average</th>
+			<th>Satisfaction Score</th>
 			<td></td>
-			<td class="active">3</td>
+			<th class="active">
+				98%
+			</th>
 
 		</tr>
 	</table>
