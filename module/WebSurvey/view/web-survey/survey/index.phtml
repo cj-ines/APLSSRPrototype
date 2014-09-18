@@ -14,7 +14,8 @@
 </div>
 
 <?php 
-foreach ($this->questions as $k => $q ) {
+foreach ($this->questions as $question) {
+foreach ($question as $k => $q ) {
 ?>
 <div class="container">
 <div class="row well well-sm question-well <?php echo $k?> not-answered" >
@@ -33,7 +34,8 @@ foreach ($this->questions as $k => $q ) {
     </div>
 </div>
 </div>
-<?php } ?>
+<?php }} ?>
+
 
 <a class="btn btn-primary btn-lg submit-answer" href="#" onclick="submitAnswer()">Submit Answers</a>
 
