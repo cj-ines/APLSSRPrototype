@@ -41,6 +41,10 @@
 	margin: 2px;
 }
 
+.c-home-modules {
+	min-height: 250px;
+}
+
 .not-answered-alert {
 	border: #ff3333 1px solid;
 }

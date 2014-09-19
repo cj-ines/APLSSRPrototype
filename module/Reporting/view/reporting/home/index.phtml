@@ -3,7 +3,7 @@
 		<div class="col-md-12 jumbotron">
 			
 			<h2>Welcome to APL Survey Program!</h2>
-			<h4>
+			<h4 class="hidden">
 				Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.
 			</h4>
 			<a 
@@ -24,7 +24,7 @@
 			<p>
 				<a class="btn btn-primary"
 				href="<?php echo $this->url('reporting/dashboard-interface'); ?>">Go to Dashboard</a>
-				<a class="btn btn-default">More info</a>
+				<a class="btn btn-default hidden">More info</a>
 			</p>
 		</div>
 		<div class="col-md-4 c-home-modules">
@@ -35,18 +35,18 @@
 			<p>
 				<a class="btn btn-primary"
 				href="<?php echo $this->url('reporting/admin-interface'); ?>">Go to Admin</a>
-				<a class="btn btn-default">More info</a>
+				<a class="btn btn-default hidden">More info</a>
 			</p>
 		</div>
 		<div class="col-md-4 c-home-modules">
 			<h3> <img src="<?php echo $this->basePath().'/images/icons/home_survey.png' ?>">Web Survey</h3>			
 			<p class="c-home-caption">
-				Are you ready to fill out the survey? It will take less than 2 minutes.
+				Are you ready to fill out the survey? It will take 2 minutes.
 			</p>
 			<p>
 				<a class="btn btn-primary"
 				href="<?php echo $this->url('web-survey'); ?>">Start Survey</a>
-				<a class="btn btn-default">More info</a>
+				<a class="btn btn-default hidden">More info</a>
 			</p>
 		</div>
 		<div class="col-md-4 c-home-modules">
@@ -57,7 +57,7 @@
 			<p>
 				<a class="btn btn-primary"
 				href="<?php echo $this->url('reporting/site-pages', array('action' => 'contact-us')); ?>">Contact us</a>
-				<a class="btn btn-default">More info</a>
+				<a class="btn btn-default hidden">More info</a>
 			</p>
 		</div>
 	</div>
