@@ -22,12 +22,12 @@
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">Rationale
-					   <button class="btn btn-xs btn-default">All</button>
-					   <button class="btn btn-xs btn-default">None</button>
+					   <button class="btn btn-xs btn-default filter-toggle-all" for="filter-option-1">All</button>
+					   <button class="btn btn-xs btn-default filter-toggle-none" for="filter-option-1">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
 						<?php foreach ($this->scorings as $key => $value) { ?>
-							<input type="checkbox" checked> <?php echo $key; ?><br> 
+							<input type="checkbox" id="filter01_<?php echo str_replace(' ','_',$key) ?> " class="filter-option-1" checked> <?php echo $key; ?><br> 
 						<?php } ?>
 					</div>
 				</div>
@@ -35,21 +35,21 @@
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">Country
-					   <button class="btn btn-xs btn-default">All</button>
-					   <button class="btn btn-xs btn-default">None</button>
+					   <button class="btn btn-xs btn-default filter-toggle-all" for="filter-option-2">All</button>
+					   <button class="btn btn-xs btn-default filter-toggle-none" for="filter-option-2">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
-						<input type="checkbox" checked> Netherlands <br> <input
-							type="checkbox" checked> Japan <br> <input type="checkbox"
-							checked> US <br> <input type="checkbox" checked> China <br>
+						<input type="checkbox" checked class="filter-option-2"> Netherlands <br> <input
+							type="checkbox" checked class="filter-option-2"> Japan <br> <input type="checkbox"
+							checked class="filter-option-2"> US <br> <input type="checkbox" checked class="filter-option-2"> China <br>
 					</div>
 				</div>
 			</div>
 			<!-- <div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">Suppport Ratio
-					   <button class="btn btn-xs btn-default">All</button>
-					   <button class="btn btn-xs btn-default">None</button>
+					   <button class="btn btn-xs btn-default filter-toggle-all">All</button>
+					   <button class="btn btn-xs btn-default filter-toggle-none">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
 						<input type="checkbox" checked> 5 or more <br> <input
@@ -61,13 +61,13 @@
 			</div>  -->
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">ESR
-					   <button class="btn btn-xs btn-default">All</button>
-					   <button class="btn btn-xs btn-default">None</button>
+					<div class="panel-heading">Trade Analyst
+					   <button class="btn btn-xs btn-default filter-toggle-all" for="filter-option-3">All</button>
+					   <button class="btn btn-xs btn-default filter-toggle-none" for="filter-option-3">None</button>
 					</div>
 					<div class="panel-body c-filter-panel">
 					<?php foreach ($this->data as $employees) { ?>
-						<input name="SSR" type="checkbox" checked> <?php echo $employees['first_name'].' '.$employees['last_name']; ?><br>
+						<input name="SSR" type="checkbox" checked class="filter-option-3"> <?php echo $employees['first_name'].' '.$employees['last_name']; ?><br>
 					<?php } ?>
 					</div>
 				</div>
@@ -88,4 +88,14 @@
 </div>
 <script>
 	$('.compare-selection').tooltip();
+
+	$('.filter-toggle-none').click(function(){
+		var x = $(this).attr('for');
+		$('.' + x).prop('checked',false);
+	});
+
+	$('.filter-toggle-all').click(function(){
+		var x = $(this).attr('for');
+		$('.' + x).prop('checked',true);
+	});
 </script>
