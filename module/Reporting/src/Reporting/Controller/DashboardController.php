@@ -73,10 +73,14 @@ class DashboardController extends AbstractActionController
         $rankings_view = new ViewModel();
         $rankings_view->setTemplate('reporting/dashboard/parts/rankings');
 
+        $periods_view = new ViewModel();
+        $periods_view->setTemplate('reporting/dashboard/parts/periods');
+
     	$view->addChild($score_table_view,'scoreTable')
             ->addChild($filter_view,'filters')
             ->addChild($campaign_progress_view,'campaignProgress')
-            ->addChild($rankings_view,'rankings');
+            ->addChild($rankings_view,'rankings')
+            ->addChild($periods_view,'periods')
         ;
     	return $view;
     }

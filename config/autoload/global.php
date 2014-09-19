@@ -13,13 +13,11 @@
 
 return array(
     'db' => array(
-    	'driver' => 'Pdo',
-    	'dsn' => 'mysql:dbaname=dep3f2waktm;host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com',
-    	'driver_options' => array(
-    		PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF-8\'',
-    	),
-    	'username' => '1FNwlTWvFxhW',
-    	'password' => 'dep3f2waktm',
+        'driver'    => 'PdoMysql',
+        'hostname'  => 'mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com',
+        'database'  => 'depdah837y2',
+        'username'  => 'depdah837y2',
+        'password'  => 'aXM7dgLvanMG',
     ),
     'service_manager' => array(
     	'factories' => array(
