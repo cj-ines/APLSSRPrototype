@@ -28,7 +28,8 @@ class UserForm extends Form
             'options' => array( 
                 'label' => 'Role', 
                 'value_options' => array(
-                    '0' => 'ESR / Sales Rep',  
+                    '0' => 'SSR \Trade Analyst', 
+                    '1' => 'Reviewer', 
                     '2' => 'Admin', 
                     '3' => 'Manager', 
                 ),

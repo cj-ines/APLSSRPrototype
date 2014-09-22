@@ -2,13 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZendSkeletonApplication\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2014-09-18 16:54+0800\n"
-"PO-Revision-Date: 2014-09-22 19:45+0800\n"
-=======
 "POT-Creation-Date: 2012-07-05 22:17-0700\n"
 "PO-Revision-Date: 2014-08-04 22:13+0800\n"
->>>>>>> parent of 6464ffa... translation
 "Last-Translator: Evan Coury <me@evancoury.com>\n"
 "Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
 "Language: en_US\n"
@@ -165,58 +160,6 @@ msgstr ""
 msgid "resolves to %s"
 msgstr ""
 
-<<<<<<< HEAD
-#: ../view/error/404.phtml:53 ../view/error/index.phtml:8
-msgid "Additional information"
-msgstr ""
-
-#: ../view/error/404.phtml:56 ../view/error/404.phtml:80
-#: ../view/error/index.phtml:11 ../view/error/index.phtml:35
-msgid "File"
-msgstr ""
-
-#: ../view/error/404.phtml:60 ../view/error/404.phtml:84
-#: ../view/error/index.phtml:15 ../view/error/index.phtml:39
-msgid "Message"
-msgstr ""
-
-#: ../view/error/404.phtml:64 ../view/error/404.phtml:88
-#: ../view/error/index.phtml:19 ../view/error/index.phtml:43
-msgid "Stack trace"
-msgstr ""
-
-#: ../view/error/404.phtml:74 ../view/error/index.phtml:29
-msgid "Previous exceptions"
-msgstr ""
-
-#: ../view/error/404.phtml:103 ../view/error/index.phtml:58
-msgid "No Exception available"
-msgstr ""
-
-#: ../view/error/index.phtml:1
-msgid "An error occurred"
-msgstr ""
-
-#: ../view/layout/layout.phtml:6 ../view/layout/layout.phtml:38
-msgid "Skeleton Application"
-msgstr "APL Sales Rep Survey"
-
-#: ../view/layout/layout.phtml:51
-msgid "All rights reserved."
-msgstr ""
-
-#: ../view/zfc-user/user/login.phtml:1
-msgid "Sign In"
-msgstr ""
-
-#: ../view/zfc-user/user/login.phtml:31
-msgid "Not registered?"
-msgstr ""
-
-#: ../view/zfc-user/user/login.phtml:31
-msgid "Sign up!"
-=======
 #: ../view/error/404.phtml:51
 msgid "Exception"
->>>>>>> parent of 6464ffa... translation
 msgstr ""

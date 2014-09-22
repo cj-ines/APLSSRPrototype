@@ -64,7 +64,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'John',
                         'last_name' => 'Doe',
-                        'role' => 'ESR / Sales Rep',
+                        'role' => 'SSR / Trade Analyst',
                         'email' => 'john.doe@email.com',
                         'status' => 'no',
                         'country' => 'USA',
@@ -99,7 +99,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'Diana Rose',
                         'last_name' => 'Stalone',
-                        'role' => 'ESR / Sales Rep',
+                        'role' => 'SSR / Trade Analyst',
                         'email' => 'diana@email.com',
                         'country' => 'USA',
                         'status' => 'no',
@@ -136,11 +136,19 @@ class Module implements AutoloaderProviderInterface
                                 'role' => 'ESR',
                                 'status' => 'no'
                             ),
-                              array(
+                            array(
                                 'first_name' => 'Ho Chi ',
                                 'last_name' => 'Mihn',
                                 'country' => 'USA',
                                 'email' => 'saigon@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                            array(
+                                'first_name' => 'Jenny ',
+                                'last_name' => 'Engarde',
+                                'country' => 'USA',
+                                'email' => 'jen.en@email.com',
                                 'role' => 'ESR',
                                 'status' => 'no'
                             ),
@@ -150,7 +158,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'Cristopher',
                         'last_name' => 'Dela Mortiz',
-                        'role' => 'ESR / Sales Rep',
+                        'role' => 'SSR / Trade Analyst',
                         'email' => 'cmortiz@email.com',
                         'country' => 'USA',
                         'status' => 'yes',

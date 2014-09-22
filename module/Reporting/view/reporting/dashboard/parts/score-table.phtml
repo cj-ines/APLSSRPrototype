@@ -1,11 +1,16 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<span class="panel-title">Survey Results - <strong> </strong></span>
+		<span class="panel-title">Survey Results - <strong>SSR / Trade Analyst John Doe</strong></span>
 	</div>
 	<table class="table table-bordered">
 		<tr class="score-table-header">
-			<th>Rationale</th>
-			<th>Questions</th>
+			<th>Key Task</th>
+			<th><?php echo $this->translate('Questions'); ?></th>
+			<?php 
+				for ($i = 1; $i <= $this->reviewers; $i++)  {
+					echo '<th>Rev '.$i.'</th>';
+				} 
+			?>
 			<th class="active">Ave Score</th>
 		</tr>
 		<?php foreach ($this->scorings as $key => $questions) {
@@ -17,31 +22,33 @@
 			<?php } else { ?>
 			</tr><tr>
 			<?php } ?>
-			
-
-			<?php 
-			$score = array();
-			foreach ($questions as $code =>  $question) {
-				$score[$code] = rand(1,5); ?>
+			<?php foreach ($questions as $code =>  $question) {?>
 			<td>
 				<span class="question-text"><?php echo $code.' - '.$question; ?>
 				</span>
 			</td>
-			<td class="active"><?php echo $score[$code]; ?></td>
+		<?php
+			for ($i = 1; $i <= $this->reviewers; $i++)  { ?>
+			<td><span class="score-label" title="Double Click to edit">3</span></td>
+		<?php } ?>
+			<td class="active">3</td>
 			</tr>
 			<?php } ?>
 		<?php } ?>
 		<tr>
-			<th>Satisfaction Score</th>
+			<th>Average</th>
 			<td></td>
-			<th class="active">
-				98%
-			</th>
+			<?php 
+				for ($i = 1; $i <= $this->reviewers; $i++)  {
+					echo '<td>3</td>';
+				} 
+			?>
+			<td class="active">3</td>
 
 		</tr>
 	</table>
 	<div class="panel-footer">
-		<a href="<?php echo $this->basePath().'/export/export.xlsx'; ?>" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</a>
+		<a class="btn btn-default" href="<?php echo $this->basePath().'/export/export.xlsx'; ?>"><span class="glyphicon glyphicon-download"></span> Excel Report</a>
 	</div>
 </div>
 

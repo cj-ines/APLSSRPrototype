@@ -4,12 +4,12 @@
 	</div>
 	<table class="table review-table">
 		<tr>
-			<th>ID</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Role</th>
-			<th>Country</th>
-			<th>Status</th>
+			<th><?php echo $this->translate('ID'); ?></th>
+			<th><?php echo $this->translate('First Name');?></th>
+			<th><?php echo $this->translate('Last Name');?></th>
+			<th><?php echo $this->translate('Role');?></th>
+			<th><?php echo $this->translate('Country');?></th>
+			<th><?php echo $this->translate('Nomination Status');?></th>
 			<th></th>
 		</tr>
 		<?php foreach ($this->data as $key => $subject) { ?> 

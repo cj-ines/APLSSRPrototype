@@ -55,6 +55,14 @@ class AdminController extends AbstractActionController
 		return new ViewModel();
 	}
 
+	public function newUserAction()
+	{
+		$create_user_view = $this->getServiceLocator()->get('UserFormFactory');
+		$view = new ViewModel();
+		$view->addChild($create_user_view,'createUserForm');
+		return $view;
+	}
+
 	public function getData() {
         if (!isset($this->data)) {
             $this->data = $this->getServiceLocator()->get('SampleEmployees');

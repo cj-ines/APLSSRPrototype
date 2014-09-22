@@ -117,10 +117,10 @@ return array(
                     ),
                 ),
             ),
-            /* array(
+            array(
                 'label' => 'Manager',
                 'route' => 'reporting/manager-interface'
-            ),  */
+            ),
         ),
     ),
 );

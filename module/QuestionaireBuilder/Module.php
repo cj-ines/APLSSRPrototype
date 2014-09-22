@@ -23,7 +23,7 @@ class Module implements AutoloaderProviderInterface
             ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-            // if we're in a namespace deeper than one level we need to fix the \ in the path
+		    // if we're in a namespace deeper than one level we need to fix the \ in the path
                     __NAMESPACE__ => __DIR__ . '/src/' . str_replace('\\', '/' , __NAMESPACE__),
                 ),
             ),
@@ -41,21 +41,38 @@ class Module implements AutoloaderProviderInterface
             'factories' => array(
                 'QuestionRepository' => function ($sm) {
                     return array (
-                        'Relationship Management' => array(
-                            'Q1' => 'The sales rep spends enough time with my business',
-                            'Q2' => 'The sales rep is professional, corteous and treats me with respect',
-                        ),
-                        'Transaction Service Support' => array(
-                            'Q3' => 'The sales rep is responsive to my inquiries',
-                            'Q4' => 'The sales rep clearly understands my business requirements',
-                        ),
                         'Lead Generation' => array(
-                            'Q5' => 'The sales rep is knowledgable about APL\'s services',
+                            'Q1' => 'SSR provides high quality market intelligence',
+                            'Q2' => 'SSR is effective at handling & channeling incoming leads',
+                            'Q3' => 'SSR is effective at making cold calls to generate leads',
                         ),
-                        'Overall' => array(
-                            'Q6' => 'Overall, I am satisfied with the sales rep\'s servies',
-                            'Q7' => 'Overall, how does the sales rep compare with those of our competition?',
+                        'Agreement Negotiation' => array(
+                            'Q4' => 'SSR makes me feel more prepared for calls/negotiations with clients',
+                            'Q5' => 'SSR is helpful in supporting negotiations with Trade and Ops, such as MAR changes and performance feedback to network',
+                            'Q6' => 'SSR processes rate filing requests quickly and efficiently',
+                            'Q7' => 'SSR processes tariff filing requests quickly and efficiently',
+                            'Q8' => 'SSR prepares contracts efficiently and accurately',
                         ),
+                        'Post-close' => array(
+                            'Q9' => 'SSR provides timely and accurate account performance reports'
+                        ),
+                        'Account Admin' => array(
+                            'Q10' => 'SSR sets up accounts (CAP codes) quickly and accurately',
+                            'Q11' => 'SSR completes DG requests quickly and accurately',
+                            'Q12' => 'SSR processes/validates credit requests quickly',
+                        ),
+                        'Internal Admin' => array(
+                            'Q13' => 'SSR updates data in CRM on behalf of reps quickly and accurately',
+                            'Q14' => 'SSR provides timely forecasts to CCAM',
+                            'Q15' => 'SSR executes timely and accurate internal performance reports',
+                        ),
+                        'Exception' => array(
+                            'Q16' => 'SSR handles exception requests independently and effectively',
+                        ),
+                        'General' => array (
+                            'Q17' => 'The SSR communicates effectively with me',
+                            'Q18' => 'The SSR is responsive to my inquiries/ requests',
+                        )
                     );
                 },
             ),

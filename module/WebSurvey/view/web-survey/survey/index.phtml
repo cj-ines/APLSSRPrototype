@@ -6,10 +6,11 @@
 </div>
 <hr>
 <div class="well">
-	<h5>Client Name: <strong>John Doe</strong></h5>
-    <h5>APL Sales Rep. Name: <strong>Mike Bob</strong></h5>
-	<a class="btn btn-xs btn-default hidden" href="<?php echo $this->url('reporting/site-pages',array('action' => 'contact-us')) ?>" target="_new" data-toggle="modal"><span class="glyphicon glyphicon-flag"></span> Report Error</a> </h4>
+	<h5>Reviewer Name: <strong>John Doe</strong></h5>
+    <h5>SSR Name: <strong>Mike Bob</strong></h5>
+	<a class="btn btn-xs btn-default" href="<?php echo $this->url('reporting/site-pages',array('action' => 'contact-us')) ?>" target="_new" data-toggle="modal"><span class="glyphicon glyphicon-flag"></span> Report Error</a> </h4>
     <br>
+
 </div>
 
 <?php 
@@ -17,23 +18,24 @@ foreach ($this->questions as $question) {
 foreach ($question as $k => $q ) {
 ?>
 <div class="container">
-    <div class="row well well-sm question-well <?php echo $k?> not-answered" >
-        <div class="col-md-6">
-            <span class="badge"><?php echo $k ?> </span> <?php echo $q ?>
-        </div>
-        <div class="col-md-6">
-            <div class="c-answers">
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Disagree"> 1 </label>
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Disagree"> 2 </label>
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Neutral"> 3 </label>
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Agree"> 4 </label>
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Agree"> 5 </label>
-                <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>"> NA </label>
-            </div>
-        </div>
+<div class="row well well-sm question-well <?php echo $k?> not-answered" >
+    <div class="col-md-8">
+        <span class="badge"><?php echo $k ?> </span> <?php echo $q ?>
+    </div>
+    <div class="col-md-4">
+    <div class="c-answers">
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Disagree"> 1 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Disagree"> 2 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Neutral"> 3 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Agree"> 4 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>" title="Strongly Agree"> 5 </label>
+        <label class="radio-inline "><input type="radio" class="answer-radio" name="<?php echo $k ?>"> NA </label>
+    </div>
     </div>
 </div>
+</div>
 <?php }} ?>
+
 
 <a class="btn btn-primary btn-lg submit-answer" href="#" onclick="submitAnswer()">Submit Answers</a>
 

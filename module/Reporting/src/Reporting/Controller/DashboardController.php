@@ -16,28 +16,28 @@ class DashboardController extends AbstractActionController
 {
     protected $scoring;
     protected $data;
-	public function indexOldAction()
+    public function indexOldAction()
     {
-    	$compare = $this->params()->fromQuery('compare');
-    	$scorings = $this->getScoring();
+        $compare = $this->params()->fromQuery('compare');
+        $scorings = $this->getScoring();
         $data = $this->getData();
         $filters_view = new ViewModel();
         $filters_view->setTemplate('reporting/dashboard/parts/filters');
         $dashbord_view = new ViewModel(array(
-        	'scoring' => $scorings,
+            'scoring' => $scorings,
         ));
         $dashbord_view->setTemplate('reporting/dashboard/parts/dashboard');
         $scorecards = array();
         $view = new ViewModel();
         foreach ($scorings as $scoring => $questions ) {
             $score_view = new ViewModel(array(
-            	'title' => $scoring,
-            	'questions' => $questions,
+                'title' => $scoring,
+                'questions' => $questions,
             ));
             if ($compare=='') {
-            	$score_view->setTemplate('reporting/dashboard/parts/scores');
+                $score_view->setTemplate('reporting/dashboard/parts/scores');
             } else {
-            	$score_view->setTemplate('reporting/dashboard/parts/scores-compare');
+                $score_view->setTemplate('reporting/dashboard/parts/scores-compare');
             }
             $dashbord_view->addChild($score_view,$scoring);
         }
@@ -55,41 +55,38 @@ class DashboardController extends AbstractActionController
     }
     
     public function indexAction() {
-    	$scorings = $this->getScoring();
+        $scorings = $this->getScoring();
         $data = $this->getData();
-    	$filter_view = new ViewModel(array(
+        $filter_view = new ViewModel(array(
             'scorings' => $scorings,
             'data' => $data,
         ));
-    	$filter_view->setTemplate('reporting/dashboard/parts/filters');
-    	$score_table_view = new ViewModel(array(
-    		'scorings' => $scorings, 
-    	));
-    	$score_table_view->setTemplate('reporting/dashboard/parts/score-table');    	
-    	$view = new ViewModel();
+        $filter_view->setTemplate('reporting/dashboard/parts/filters');
+        $score_table_view = new ViewModel(array(
+            'scorings' => $scorings, 
+            'reviewers' => 11,
+        ));
+        $score_table_view->setTemplate('reporting/dashboard/parts/score-table');        
+        $view = new ViewModel();
 
         $campaign_progress_view = new ViewModel();
         $campaign_progress_view->setTemplate('reporting/dashboard/parts/campaign-progress');
         $rankings_view = new ViewModel();
         $rankings_view->setTemplate('reporting/dashboard/parts/rankings');
 
-        $periods_view = new ViewModel();
-        $periods_view->setTemplate('reporting/dashboard/parts/periods');
-
-    	$view->addChild($score_table_view,'scoreTable')
+        $view->addChild($score_table_view,'scoreTable')
             ->addChild($filter_view,'filters')
             ->addChild($campaign_progress_view,'campaignProgress')
-            ->addChild($rankings_view,'rankings')
-            ->addChild($periods_view,'periods')
+            ->addChild($rankings_view,'rankings');
         ;
-    	return $view;
+        return $view;
     }
     
     public function getScoring() {
-    	if (!isset($this->scoring)) {
-    		$this->scoring = $this->getServiceLocator()->get('QuestionRepository');
-    	}
-    	return $this->scoring;
+        if (!isset($this->scoring)) {
+            $this->scoring = $this->getServiceLocator()->get('QuestionRepository');
+        }
+        return $this->scoring;
     }
 
     public function getData() {
