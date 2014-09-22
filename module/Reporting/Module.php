@@ -136,11 +136,19 @@ class Module implements AutoloaderProviderInterface
                                 'role' => 'ESR',
                                 'status' => 'no'
                             ),
-                              array(
+                            array(
                                 'first_name' => 'Ho Chi ',
                                 'last_name' => 'Mihn',
                                 'country' => 'USA',
                                 'email' => 'saigon@email.com',
+                                'role' => 'ESR',
+                                'status' => 'no'
+                            ),
+                            array(
+                                'first_name' => 'Jenny ',
+                                'last_name' => 'Engarde',
+                                'country' => 'USA',
+                                'email' => 'jen.en@email.com',
                                 'role' => 'ESR',
                                 'status' => 'no'
                             ),

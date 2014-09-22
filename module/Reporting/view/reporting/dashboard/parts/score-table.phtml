@@ -6,12 +6,11 @@
 		<tr class="score-table-header">
 			<th>Key Task</th>
 			<th><?php echo $this->translate('Questions'); ?></th>
-			<th>Rater 1</th>
-			<th>Rater 2</th>
-			<th>Rater 3</th>
-			<th>Rater 4</th>
-			<th>Rater 5</th>
-			<th>Rater 6</th>
+			<?php 
+				for ($i = 1; $i <= $this->reviewers; $i++)  {
+					echo '<th>Rev '.$i.'</th>';
+				} 
+			?>
 			<th class="active">Ave Score</th>
 		</tr>
 		<?php foreach ($this->scorings as $key => $questions) {
@@ -28,15 +27,10 @@
 				<span class="question-text"><?php echo $code.' - '.$question; ?>
 				</span>
 			</td>
-			<td>
-				<span class="score-label" title="Double Click to edit">3</span>
-				
-			</td>
+		<?php
+			for ($i = 1; $i <= $this->reviewers; $i++)  { ?>
 			<td><span class="score-label" title="Double Click to edit">3</span></td>
-			<td><span class="score-label" title="Double Click to edit">3</span></td>
-			<td><span class="score-label" title="Double Click to edit">3</span></td>
-			<td><span class="score-label" title="Double Click to edit">3</span></td>
-			<td><span class="score-label" title="Double Click to edit">3</span></td>
+		<?php } ?>
 			<td class="active">3</td>
 			</tr>
 			<?php } ?>
@@ -44,18 +38,17 @@
 		<tr>
 			<th>Average</th>
 			<td></td>
-			<td>3</td>
-			<td>3</td>
-			<td>3</td>
-			<td>3</td>
-			<td>3</td>
-			<td>3</td>
+			<?php 
+				for ($i = 1; $i <= $this->reviewers; $i++)  {
+					echo '<td>3</td>';
+				} 
+			?>
 			<td class="active">3</td>
 
 		</tr>
 	</table>
 	<div class="panel-footer">
-		<button class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</button>
+		<a class="btn btn-default" href="<?php echo $this->basePath().'/export/export.xlsx'; ?>"><span class="glyphicon glyphicon-download"></span> Excel Report</a>
 	</div>
 </div>
 
