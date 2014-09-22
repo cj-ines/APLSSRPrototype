@@ -57,8 +57,19 @@ class Module implements AutoloaderProviderInterface
                     return new TableGateway('user',$dbAdapter,null,$resultSetPrototype);
                 },
                 'DummyUsers' => function($sm) {
-                        $users = array();
-                    }
+                    $users = array();
+                },
+                //FORMS
+                'User\Form\UserForm' => function($sm) {
+                    return new \User\Form\UserForm();
+                },
+                //
+                'UserFormFactory' => function ($sm) {
+                    $form = $sm->get('User\Form\UserForm');
+                    $view = new \Zend\View\Model\ViewModel(array('form' => $form));
+                    $view->setTemplate('user/user/parts/create-user-form');
+                    return $view;
+                },
             )
         );
     }
