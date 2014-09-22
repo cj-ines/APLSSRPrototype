@@ -64,7 +64,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'John',
                         'last_name' => 'Doe',
-                        'role' => 'SSR / Trade Analyst',
+                        'role' => 'ESR / Sales Rep',
                         'email' => 'john.doe@email.com',
                         'status' => 'no',
                         'country' => 'USA',
@@ -99,7 +99,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'Diana Rose',
                         'last_name' => 'Stalone',
-                        'role' => 'SSR / Trade Analyst',
+                        'role' => 'ESR / Sales Rep',
                         'email' => 'diana@email.com',
                         'country' => 'USA',
                         'status' => 'no',
@@ -150,7 +150,7 @@ class Module implements AutoloaderProviderInterface
                     $data[] = array(
                         'first_name' => 'Cristopher',
                         'last_name' => 'Dela Mortiz',
-                        'role' => 'SSR / Trade Analyst',
+                        'role' => 'ESR / Sales Rep',
                         'email' => 'cmortiz@email.com',
                         'country' => 'USA',
                         'status' => 'yes',

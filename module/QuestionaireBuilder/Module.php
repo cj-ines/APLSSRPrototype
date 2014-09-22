@@ -54,7 +54,7 @@ class Module implements AutoloaderProviderInterface
                         ),
                         'Overall' => array(
                             'Q6' => 'Overall, I am satisfied with the sales rep\'s servies',
-                            'Q7' => 'Overall, how does the sales rep compare the competition?',
+                            'Q7' => 'Overall, how does the sales rep compare with those of our competition?',
                         ),
                     );
                 },

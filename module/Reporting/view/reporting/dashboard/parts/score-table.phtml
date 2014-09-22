@@ -22,7 +22,7 @@
 			<?php 
 			$score = array();
 			foreach ($questions as $code =>  $question) {
-				$score[$code] = rand(2,10); ?>
+				$score[$code] = rand(1,5); ?>
 			<td>
 				<span class="question-text"><?php echo $code.' - '.$question; ?>
 				</span>
@@ -41,7 +41,7 @@
 		</tr>
 	</table>
 	<div class="panel-footer">
-		<button class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</button>
+		<a href="<?php echo $this->basePath().'/export/export.xlsx'; ?>" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Excel Report</a>
 	</div>
 </div>
 
