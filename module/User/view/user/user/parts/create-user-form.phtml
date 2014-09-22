@@ -1,0 +1,35 @@
+<h4>Create User</h4>
+<div class="row">
+<?php
+$form = $this->form;
+$action =  '';
+$form->setAttributes(array(
+	'action' => $action,
+	'method' => 'POST',
+));
+//echo $this->form()->openTag($form);
+?>
+<div class="col-md-12">
+	<?php 
+	echo $this->formLabel($form->get('Role'));
+	echo $this->formElement($form->get('Role'));
+	echo $this->formElementErrors($form->get('Role'));
+	echo $this->formLabel($form->get('firsName'));
+	echo $this->formElement($form->get('firsName'));
+	echo $this->formElementErrors($form->get('firsName'));
+	echo $this->formLabel($form->get('lastName'));
+	echo $this->formElement($form->get('lastName'));
+	echo $this->formElementErrors($form->get('lastName'));
+	echo $this->formLabel($form->get('emailAddress'));
+	echo $this->formElement($form->get('emailAddress'));
+	echo $this->formElementErrors($form->get('emailAddress'));
+	echo $this->formLabel($form->get('country'));
+	echo $this->formElement($form->get('country'));
+	echo $this->formElementErrors($form->get('country'));
+	echo $this->formElement($form->get('submitForm'));
+	 ?>
+</div>
+<?php 
+//echo $this->form()->closeTag($form);
+?>
+</div>
