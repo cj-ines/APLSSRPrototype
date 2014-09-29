@@ -55,6 +55,48 @@ class AdminController extends AbstractActionController
 		return new ViewModel();
 	}
 
+	public function testAction()
+	{
+		$mailService = $this->getServiceLocator()->get('MailService');
+		$mailService->sendSurveyInvitation();
+		$mailService->sendCloseNotifications();
+		$mailService->sendFinalReminderInvitation();
+	}
+
+	public function launchSurveyAction()
+	{
+		$view = new ViewModel();
+		$tab_menu_view = new ViewModel();
+		$tab_menu_view->setTemplate('reporting/admin/parts/tabs-menu');
+		$view->addChild($tab_menu_view,'tabsMenu');
+		return $view;
+	}
+
+	public function closeSurveyAction()
+	{
+		$view = new ViewModel();
+		$tab_menu_view = new ViewModel();
+		$tab_menu_view->setTemplate('reporting/admin/parts/tabs-menu');
+		$view->addChild($tab_menu_view,'tabsMenu');
+		return $view;
+	}
+
+	public function sendSurveyInvitesAction()
+	{
+		$mailService = $this->getServiceLocator()->get('MailService');
+		$mailService->sendSurveyInvitation();
+		$view = new ViewModel();
+		return $view;
+	}
+
+	public function closeSurveyInvitesAction()
+	{
+		$mailService = $this->getServiceLocator()->get('MailService');
+		$mailService->sendCloseNotifications();
+		$view = new ViewModel();
+		return $view;
+	}
+
 	public function newUserAction()
 	{
 		$create_user_view = $this->getServiceLocator()->get('UserFormFactory');
