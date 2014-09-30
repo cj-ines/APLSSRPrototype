@@ -54,6 +54,8 @@ class SurveyController extends AbstractActionController
     
     public function thankyouAction() 
     {
+        $MailService = $this->getServiceLocator('MailService');
+        $MailService->sendCompleted();
         return new ViewModel();
     }
     

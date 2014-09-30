@@ -204,6 +204,30 @@ APL team in charge of ISQ system
 		$mailer->send($mail);
 	}
 
+	
+
+	public function sendCompleted()
+	{
+		$mailer = $this->getMailerService();
+		$mail = new Mail\Message();
+		$module_config = $this->getModuleConfig();
+		
+		$body = "
+Dear SSR Name,
+
+This is to notify you that [Reviewer name] has completed SSR survey for you.
+
+Regards,
+APL team in charge of ISQ system
+
+***This is a system generated email, please do not reply as it will not reach an APL mailbox.***";
+		$mail->setBody($body);
+		$mail->setSubject('Manager Invitation');
+		$mail->setFrom($module_config['sender']);
+		$mail->setTo($this->getEmailCopy() );
+		$mailer->send($mail);
+	}
+
 	public function sendFinalReminderInvitation()
 	{
 		$mailer = $this->getMailerService();
