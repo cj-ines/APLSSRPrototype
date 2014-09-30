@@ -20,6 +20,10 @@ jQuery(function() {
 		
 	})
 
+	$('.save-reviewer').unbind().click(function(){
+		
+	})
+
 });
 
 function addRow() {
