@@ -55,6 +55,12 @@ class AdminController extends AbstractActionController
 		return new ViewModel();
 	}
 
+	public function cyclePeriodAction()
+	{
+		$view = new ViewModel();
+		return $view();
+	}
+
 	public function testAction()
 	{
 		$mailService = $this->getServiceLocator()->get('MailService');
