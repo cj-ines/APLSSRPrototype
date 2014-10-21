@@ -64,7 +64,7 @@ class DashboardController extends AbstractActionController
         $filter_view->setTemplate('reporting/dashboard/parts/filters');
         $score_table_view = new ViewModel(array(
             'scorings' => $scorings, 
-            'reviewers' => 11,
+            'reviewers' => 0,
         ));
         $score_table_view->setTemplate('reporting/dashboard/parts/score-table');        
         $view = new ViewModel();
